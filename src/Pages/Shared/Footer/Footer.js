@@ -2,8 +2,6 @@ import React from 'react';
 
 const Footer = () => {
     return (
-
-
         <footer aria-label="Site Footer" class="bg-white">
             <div class="mx-auto max-w-screen-xl px-4 pt-16 pb-8 sm:px-6 lg:px-8">
                 <div class="mx-auto max-w-md">
