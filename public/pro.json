@@ -4,7 +4,7 @@
         "categoryImg": "https://i.ibb.co/7W634kX/GN-MAAX-500-J-Bat.jpg",
         "products": [
             {
-                "productId": 1,
+                "productCategory": "Bat",
                 "productImg": "https://i.ibb.co/hfzf6CJ/Experience2.jpg",
                 "ProductName": "infinix bat",
                 "originalPrice": 100,
@@ -20,7 +20,7 @@
                 "description": "kjsdofodsofosdofoidasfiodfss"
             },
             {
-                "productId": 2,
+                "productCategory": "Bat",
                 "productImg": "https://i.ibb.co/7W634kX/GN-MAAX-500-J-Bat.jpg",
                 "ProductName": "Max bat",
                 "originalPrice": 100,
@@ -42,7 +42,7 @@
         "categoryImg": "https://i.ibb.co/QCF74K6/th.jpg",
         "products": [
             {
-                "productId": 1,
+                "productCategory": "Ball",
                 "productImg": "https://i.ibb.co/hfzf6CJ/Experience2.jpg",
                 "ProductName": "infinix bat",
                 "originalPrice": 100,
@@ -58,7 +58,7 @@
                 "description": "kjsdofodsofosdofoidasfiodfss"
             },
             {
-                "productId": 2,
+                "productCategory": "Ball",
                 "productImg": "https://i.ibb.co/QCF74K6/th.jpg",
                 "ProductName": "Max bat",
                 "originalPrice": 100,
@@ -80,7 +80,7 @@
         "categoryImg": "https://i.ibb.co/0Mtg98c/helmet.webp",
         "products": [
             {
-                "productId": 1,
+                "productCategory": "Helmet",
                 "productImg": "https://i.ibb.co/hfzf6CJ/Experience2.jpg",
                 "ProductName": "infinix bat",
                 "originalPrice": 100,
@@ -96,7 +96,7 @@
                 "description": "kjsdofodsofosdofoidasfiodfss"
             },
             {
-                "productId": 2,
+                "productCategory": "Helmet",
                 "productImg": "https://i.ibb.co/0Mtg98c/helmet.webp",
                 "ProductName": "Max bat",
                 "originalPrice": 100,
