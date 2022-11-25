@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { setAuthToken, setAuthTokenGmail } from '../../../Api/Auth/Auth';
 import BtnSpinner from '../../../components/Sprinners/BtnSpinner/BtnSpinner';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
@@ -14,9 +15,11 @@ const LogIn = () => {
         event.preventDefault();
         const email = event.target.email.value;
         const password = event.target.password.value;
+        const accountType = event.target.type.value;
         signin(email, password)
             .then(result => {
                 toast.success('logIn successfully');
+                setAuthToken(result.user, accountType)
                 navigate(from, { replace: true });
             })
             .catch(err => {
@@ -32,6 +35,7 @@ const LogIn = () => {
             .then(result => {
                 console.log(result.user);
                 toast.success('logIn successfully');
+                setAuthTokenGmail(result.user);
                 navigate(from, { replace: true });
             })
             .catch(err => {
@@ -69,6 +73,15 @@ const LogIn = () => {
                     className='space-y-6 ng-untouched ng-pristine ng-valid'
                 >
                     <div className='space-y-4'>
+                        <div className="form-control">
+                            <div className="input-group">
+                                <select name='type' className="select select-bordered w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-green-500 bg-gray-200 text-gray-900">
+                                    {/* <option disabled selected>Pick category</option> */}
+                                    <option>Buyer</option>
+                                    <option>Seller</option>
+                                </select>
+                            </div>
+                        </div>
                         <div>
                             <label htmlFor='email' className='block mb-2 text-sm text-left'>
                                 Email address

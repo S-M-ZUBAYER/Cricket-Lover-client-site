@@ -1,12 +1,12 @@
 import React, { useContext } from 'react'
 import toast from 'react-hot-toast'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { setAuthToken, setAuthTokenGmail } from '../../../Api/Auth/Auth'
 import BtnSpinner from '../../../components/Sprinners/BtnSpinner/BtnSpinner'
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider'
 
 const Register = () => {
     const { createUser, updateUserProfile, loading, setLoading, signInWithGoogle } = useContext(AuthContext);
-
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -16,7 +16,8 @@ const Register = () => {
         const image = event.target.image.files[0];
         const email = event.target.email.value;
         const password = event.target.password.value;
-        console.log(name, image, email, password);
+        const accountType = event.target.type.value;
+        console.log(name, image, email, password, accountType);
 
 
         const formData = new FormData();
@@ -38,6 +39,7 @@ const Register = () => {
                         updateUserProfile(name, imgData.data.display_url)
                             .then(() => {
                                 console.log(result)
+                                setAuthToken(result.user, accountType)
                                 toast.success('Registration Completed successfully...');
                                 setLoading(false)
                             })
@@ -52,6 +54,7 @@ const Register = () => {
             .then(result => {
                 console.log(result.user);
                 toast.success('logIn successfully');
+                setAuthTokenGmail(result.user);
                 navigate(from, { replace: true });
             })
             .catch(err => {
@@ -74,6 +77,15 @@ const Register = () => {
                     className='space-y-12 ng-untouched ng-pristine ng-valid'
                 >
                     <div className='space-y-4'>
+                        <div className="form-control">
+                            <div className="input-group">
+                                <select name='type' className="select select-bordered w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-green-500 bg-gray-200 text-gray-900">
+                                    {/* <option disabled selected>Pick category</option> */}
+                                    <option>Buyer</option>
+                                    <option>Seller</option>
+                                </select>
+                            </div>
+                        </div>
                         <div>
                             <label htmlFor='email' className='block mb-2 text-sm text-left'>
                                 Name

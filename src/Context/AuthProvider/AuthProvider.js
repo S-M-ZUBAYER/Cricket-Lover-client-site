@@ -54,7 +54,7 @@ const AuthProvider = ({ children }) => {
     // 5. Logout
     const logout = () => {
         setLoading(true)
-        localStorage.removeItem('aircnc-token')
+        localStorage.removeItem('Cricket-Lover')
         return signOut(auth)
     }
 
@@ -71,14 +71,11 @@ const AuthProvider = ({ children }) => {
     }
 
     useEffect(() => {
-        //this part will execute once the component is mounted.
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser)
             setLoading(false)
         })
-
         return () => {
-            //this part will execute once the component is unmounted.
             unsubscribe()
         }
     }, [])
