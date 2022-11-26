@@ -1,5 +1,6 @@
 import { async } from '@firebase/util';
 import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import DisplaySpinner from '../../../components/Sprinners/DisplaySpinner/DisplaySpinner';
 import Banner from '../../HomePage/Banner/Banner';
@@ -8,21 +9,51 @@ import ProductCard from '../ProductCard/ProductCard';
 
 const Products = () => {
     const [bookingProduct, setBookingProduct] = useState(null);
-    const url = document.referrer;
-    const id = url.split('/')
-    console.log("pathname", id[4])
+    const pathname = document.location.pathname;
+    const idArr = pathname.split('/');
+    const id = idArr[2];
     // const [products, setProducts] = useState([]);
-    const { data: products = [], isLoading } = useQuery({
+    const { data: categories = [], isLoading } = useQuery({
         queryKey: ['products'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/products`);
+            const res = await fetch(`http://localhost:5000/categories`);
+            const data = await res.json();
+            return data;
+        }
+    })
+    // const { data: products = [] } = useQuery({
+    //     queryKey: ['products'],
+    //     queryFn: async () => {
+    //         const res = await fetch(`http://localhost:5000/products/?category=${findCategory?.categoryName}`);
+    //         const data = await res.json();
+    //         return data;
+    //     }
+    // })
+    // console.log(products)
+    // useEffect(() => {
+    //     axios.get(`http://localhost:5000/categories`)
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             console.log(data)
+    //         })
+    // }, [])
+    const findCategory = categories.find(category => category._id === id)
+    console.log(findCategory?.categoryName);
+
+    const url = `http://localhost:5000/products?category=${findCategory?.categoryName}`;
+
+    const { data: products = [] } = useQuery({
+        queryKey: ['products', findCategory?.categoryName],
+        queryFn: async () => {
+            const res = await fetch(url);
             const data = await res.json();
             return data;
         }
     })
 
 
-    console.log(products)
+
+
     if (isLoading) {
         return <DisplaySpinner></DisplaySpinner>
     }

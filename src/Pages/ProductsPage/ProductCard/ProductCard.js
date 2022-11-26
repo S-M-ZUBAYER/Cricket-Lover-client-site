@@ -1,9 +1,7 @@
 import React from 'react';
 
 const ProductCard = ({ product, setBookingProduct }) => {
-    console.log(product);
     const { ProductName, productImg, productCategory, resalePrice, date, host, sellerName, verified, conditionType, mobileNo, location, description, categoryId, originalPrice, duration } = product;
-    console.log(ProductName, productImg, productCategory, resalePrice, date, host, sellerName, verified, conditionType, mobileNo, location, description, categoryId, originalPrice)
     return (
         <div>
             <div className="flex flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md bg-gray-900 text-gray-100">

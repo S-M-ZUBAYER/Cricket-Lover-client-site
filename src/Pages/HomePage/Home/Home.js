@@ -17,7 +17,6 @@ const Home = () => {
             .then(data => {
                 setLoading(true)
                 setCategories(data);
-                console.log(data)
                 setLoading(false)
             });
 
@@ -32,7 +31,7 @@ const Home = () => {
             <div className="mt-12 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                 {
 
-                    categories.map(category => <Link to={`/category/${category?.categoryId}`}><CategoryCard
+                    categories.map(category => <Link to={`/category/${category?._id}`}><CategoryCard
                         key={category._id}
                         category={category}
                     ></CategoryCard></Link>)

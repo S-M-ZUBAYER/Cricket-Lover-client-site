@@ -10,7 +10,6 @@ const BookingModal = ({ treatment, setTreatment, selectedDate, refetch, product 
 
 
     const { user } = useContext(AuthContext);
-    console.log(product)
     const handleBooking = event => {
         event.preventDefault();
         const form = event.target;
@@ -41,7 +40,6 @@ const BookingModal = ({ treatment, setTreatment, selectedDate, refetch, product 
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 if (data.acknowledged) {
                     // setBooking(null);
                     form.reset();
@@ -54,8 +52,6 @@ const BookingModal = ({ treatment, setTreatment, selectedDate, refetch, product 
                 }
 
             })
-
-        console.log(booking);
     }
 
     return (

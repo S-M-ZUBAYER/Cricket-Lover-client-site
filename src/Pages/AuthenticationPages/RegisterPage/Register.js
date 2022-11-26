@@ -7,6 +7,7 @@ import { AuthContext } from '../../../Context/AuthProvider/AuthProvider'
 
 const Register = () => {
     const { createUser, updateUserProfile, loading, setLoading, signInWithGoogle } = useContext(AuthContext);
+
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -25,9 +26,9 @@ const Register = () => {
 
         //70078de6ca48a9e25382bba10bf2e8df
         //https://api.imgbb.com/1/upload
+        console.log(process.env.REACT_APP_imgbbKey)
 
-
-        const url = ' https://api.imgbb.com/1/upload?key=70078de6ca48a9e25382bba10bf2e8df';
+        const url = `https://api.imgbb.com/1/upload?key=${process.env.REACT_APP_imgbbKey}`;
         fetch(url, {
             method: "POST",
             body: formData

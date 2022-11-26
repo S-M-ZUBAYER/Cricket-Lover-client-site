@@ -1,10 +1,19 @@
 import toast from "react-hot-toast";
+const insertTime = new Date().getTime();
+const date = new Date().toLocaleDateString();
+const time = new Date().toLocaleTimeString();
 
 export const setAuthToken = (user, accountType) => {
     const currentUser = {
         email: user.email,
         userImg: user.photoURL,
+        signUpTime: "",
+        userName: user.displayName,
         accountType,
+        insertTime,
+        date,
+        time
+
 
     }
     fetch(`http://localhost:5000/user/${user?.email}`, {
@@ -25,7 +34,12 @@ export const setAuthTokenGmail = (user, accountType) => {
     const currentUser = {
         email: user.email,
         userImg: user.photoURL,
+        signUpTime: "",
+        userName: user.displayName,
         accountType: "Buyer",
+        insertTime,
+        date,
+        time
 
     }
     fetch(`http://localhost:5000/user/${user?.email}`, {
