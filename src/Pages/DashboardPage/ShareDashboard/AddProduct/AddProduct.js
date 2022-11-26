@@ -81,7 +81,7 @@ const AddProduct = () => {
                         .then(result => {
                             toast.success(`product added successfully`)
                             setLoading(false)
-                            navigate('/dashboard/addProduct')
+                            navigate('/dashboard/myProducts')
                         })
                 }
             })

@@ -28,7 +28,7 @@ const ProductCard = ({ product, setBookingProduct }) => {
                 <div>
                     <img src={image} alt="" className="object-cover w-full mb-4 h-60 sm:h-96 bg-gray-500" />
                     <h2 className="mb-1 text-xl font-semibold">{productName}</h2>
-                    <p className="text-sm text-gray-400">{description}</p>
+                    <p className="text-sm text-gray-400">{description.length > 100 ? description.slice(0, 100) + '...' : description}</p>
                 </div>
                 <div className="flex justify-between w-full">
                     <p className="text-base  text-left mr-3">Original Price:{originalPrice}$</p>
