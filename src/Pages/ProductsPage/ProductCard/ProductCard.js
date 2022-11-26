@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
 const ProductCard = ({ product, setBookingProduct }) => {
-    const { ProductName, productImg, productCategory, resalePrice, date, host, sellerName, verified, conditionType, mobileNo, location, description, categoryId, originalPrice, duration } = product;
+    const { user } = useContext(AuthContext);
+    const { name, productName, image, sellerImg, productCategory, resalePrice, date, sellerName, verified, conditionType, mobileNo, location, description, categoryId, originalPrice, duration } = product;
     return (
         <div>
             <div className="flex flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md bg-gray-900 text-gray-100">
                 <div className="flex space-x-4">
-                    <img alt="" src={productImg} className="object-cover w-12 h-12 rounded-full shadow bg-gray-500" />
+                    <img alt="" src={sellerImg} className="object-cover w-12 h-12 rounded-full shadow bg-gray-500" />
 
                     <div className="flex flex-col">
                         <div className="flex">
-                            <a rel="noopener noreferrer" href="#" className="text-md font-semibold mr-1">{sellerName}</a>
+                            <a rel="noopener noreferrer" href="#" className="text-md font-semibold mr-1">{name}</a>
                             {verified && <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-blue-600">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>}
@@ -24,8 +26,8 @@ const ProductCard = ({ product, setBookingProduct }) => {
                     </div>
                 </div>
                 <div>
-                    <img src={productImg} alt="" className="object-cover w-full mb-4 h-60 sm:h-96 bg-gray-500" />
-                    <h2 className="mb-1 text-xl font-semibold">{ProductName}</h2>
+                    <img src={image} alt="" className="object-cover w-full mb-4 h-60 sm:h-96 bg-gray-500" />
+                    <h2 className="mb-1 text-xl font-semibold">{productName}</h2>
                     <p className="text-sm text-gray-400">{description}</p>
                 </div>
                 <div className="flex justify-between w-full">

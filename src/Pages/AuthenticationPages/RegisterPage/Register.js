@@ -150,7 +150,7 @@ const Register = () => {
                                 type='submit'
                                 className='w-full px-8 py-3 font-semibold rounded-md bg-gray-900 hover:bg-gray-700 hover:text-white text-gray-100 bg-gradient-to-r from-purple-400 to-pink-600'
                             >
-                                {loading ? <BtnSpinner /> : 'Sign Up'}
+                                {loading ? <BtnSpinner></BtnSpinner> : 'Sign Up'}
                             </button>
                         </div>
                     </div>

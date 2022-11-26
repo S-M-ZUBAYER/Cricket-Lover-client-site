@@ -8,6 +8,7 @@ import Dashboard from "../../Pages/DashboardPage/Dashboard/Dashboard";
 import AddProduct from "../../Pages/DashboardPage/ShareDashboard/AddProduct/AddProduct";
 import AllBuyers from "../../Pages/DashboardPage/ShareDashboard/AllBuyers/AllBuyers";
 import AllSellers from "../../Pages/DashboardPage/ShareDashboard/AllSellers/AllSellers";
+import AllUser from "../../Pages/DashboardPage/ShareDashboard/AllUser/AllUser";
 import MyBuyers from "../../Pages/DashboardPage/ShareDashboard/MyBuyers/MyBuyers";
 import MyProducts from "../../Pages/DashboardPage/ShareDashboard/MyProducts/MyProducts";
 import ReportedItems from "../../Pages/DashboardPage/ShareDashboard/ReportedItems/ReportedItems";
@@ -78,6 +79,10 @@ const router = createBrowserRouter([
                 path: '/dashboard/reportedItems',
                 element: <ReportedItems></ReportedItems>
             },
+            {
+                path: '/dashboard/allUsers',
+                element: <AllUser></AllUser>
+            }
 
         ]
 

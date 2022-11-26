@@ -3,30 +3,34 @@ import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../../Context/AuthProvider/AuthProvider';
 import Moment from 'moment';
+import BtnSpinner from '../../../../components/Sprinners/BtnSpinner/BtnSpinner';
+const insertTime = new Date().getTime();
 
 const AddProduct = () => {
-    const { user } = useContext(AuthContext);
+    const { user, loading, setLoading } = useContext(AuthContext);
     const [img, setImg] = useState('')
     const navigate = useNavigate();
     const formatDate = Moment().format('DD-MM-YYYY');
     const handleSubmit = (event) => {
         const imgHostKey = process.env.REACT_APP_imgbb_key;
+        setLoading(true)
         event.preventDefault();
         const name = event.target.name.value;
         const image = event.target.image.files[0];
         const email = event.target.email.value;
-        const available = event.target.available.value;
         const phone = event.target.phone.value;
+        const location = event.target.location.value;
         const category = event.target.category.value;
         const productName = event.target.productName.value;
         const resalePrice = event.target.resalePrice.value;
         const condition = event.target.condition.value;
+        const quality = event.target.quality.value;
         const description = event.target.description.value;
         const duration = event.target.duration.value;
         const originalPrice = event.target.originalPrice.value;
         const date = formatDate;
-        const sold = event.target.sold.value;
         const purchaseDate = event.target.purchaseDate.value;
+
 
         const formData = new FormData();
         formData.append('image', image);
@@ -45,20 +49,25 @@ const AddProduct = () => {
                 if (imgData.success) {
                     const product = {
                         name,
+                        sellerImg: user.photoURL,
                         image: imgData.data.url,
                         email,
-                        available,
+                        location,
+                        advertise: true,
+                        available: true,
                         phone,
                         category,
                         productName,
                         resalePrice,
                         condition,
+                        quality,
                         purchaseDate,
-                        description,
                         duration,
                         originalPrice,
                         date,
-                        sold
+                        sold: false,
+                        description,
+                        insertTime
                     }
                     fetch('http://localhost:5000/products', {
                         method: "POST",
@@ -71,6 +80,7 @@ const AddProduct = () => {
                         .then(res => res.json())
                         .then(result => {
                             toast.success(`product added successfully`)
+                            setLoading(false)
                             navigate('/dashboard/addProduct')
                         })
                 }
@@ -123,6 +133,8 @@ const AddProduct = () => {
 
 
     // }
+
+
     return (
         <div>
             <h2 className="text-3xl text-lime-400 font-bold mt-12 mb-5">
@@ -148,9 +160,7 @@ const AddProduct = () => {
                     <input name="originalPrice" type="number" placeholder="Original Price" className="input w-full input-bordered" />
                     <input name="resalePrice" type="number" placeholder="Resale Price" className="input w-full input-bordered" />
                     <div>
-                        {/* <label htmlFor='image' className='block mb-2 text-sm text-left'>
-                            Select Image:
-                        </label> */}
+
                         <input
                             type='file'
                             className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-green-500 bg-gray-200 text-gray-900'
@@ -160,28 +170,7 @@ const AddProduct = () => {
                             required
                         />
                     </div>
-                    <input name="description" type="text" placeholder="Product Details" className="input w-full input-bordered textarea textarea-primary" />
                     <input name="duration" type="text" placeholder="Use Duration in month" className="input w-full input-bordered" />
-                    {/* <input name="location" type="text" placeholder="Location" className="input w-full input-bordered" /> */}
-                    {/* <input name="price" type="text" placeholder="Price" className="input w-full input-bordered" /> */}
-                    <div className="form-control">
-                        <div className="input-group">
-                            <select name='sold' type="boolean" placeholder='Sold Status' className="select select-bordered w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-green-500 bg-gray-200 text-gray-900">
-                                <option disabled selected>Pick Sold Status</option>
-                                <option>true</option>
-                                <option>false</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div className="form-control">
-                        <div className="input-group">
-                            <select name='available' type="boolean" className="select select-bordered w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-green-500 bg-gray-200 text-gray-900">
-                                <option disabled selected>Pick Available Status</option>
-                                <option>true</option>
-                                <option>false</option>
-                            </select>
-                        </div>
-                    </div>
                     <div className="form-control">
                         <div className="input-group">
                             <select name='condition' className="select select-bordered w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-green-500 bg-gray-200 text-gray-900">
@@ -189,6 +178,16 @@ const AddProduct = () => {
                                 <option>Excellent</option>
                                 <option>Good</option>
                                 <option>Fair</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div className="form-control">
+                        <div className="input-group">
+                            <select name='quality' className="select select-bordered w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-green-500 bg-gray-200 text-gray-900">
+                                <option disabled selected>Pick Product quality Condition</option>
+                                <option>All Ok</option>
+                                <option>Damage</option>
+                                <option>Repair</option>
                             </select>
                         </div>
                     </div>
@@ -201,8 +200,10 @@ const AddProduct = () => {
                         <label className="text-left" htmlFor="">Post date</label>
                         <input name="purchaseDate" defaultValue={formatDate} placeholder="Purchase Date" className="input w-full input-bordered" />
                     </div>
+                    <textarea name='description' className="textarea textarea-success col-span-2" placeholder="Product Details"></textarea>
+                    <textarea name='sellReason' className="textarea textarea-success col-span-2" placeholder="Sell Reason Details"></textarea>
                     <br />
-                    <input className='btn btn-accent w-full col-span-2' type="submit" value="Add Product" />
+                    <input className='btn btn-accent w-full col-span-2' type="submit" value={loading ? <BtnSpinner></BtnSpinner> : "Add Product"} />
                 </form>
             </div >
         </div >

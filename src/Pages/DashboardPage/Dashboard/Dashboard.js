@@ -22,6 +22,7 @@ const Dashboard = () => {
                     <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
                     <ul className="menu p-4 w-80  text-base-content">
                         <li><Link to='/dashboard/orders'>My Orders</Link></li>
+                        <li><Link to='/dashboard/allUsers'>All Users</Link></li>
                         <li><Link to='/dashboard/addProduct'>Add A product </Link></li>
                         <li><Link to='/dashboard/myProducts'>My Products</Link></li>
                         <li><Link to='/dashboard/myBuyers'>My buyers</Link></li>
