@@ -18,8 +18,7 @@ const AllUser = () => {
                 })
         }
         usersfetch();
-    }, [])
-    const { accountType, date, email, signUpTime, time, userImg, userName } = users;
+    }, []);
     return (
 
 

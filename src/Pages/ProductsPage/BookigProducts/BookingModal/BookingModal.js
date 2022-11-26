@@ -18,6 +18,7 @@ const BookingModal = ({ refetch, product }) => {
         const form = event.target;
         const name = form.slot.name;
         const productName = form.productName.value;
+        const img = form.img.value;
         const email = form.email.value;
         const date = form.date.value;
         const price = form.price.value;
@@ -28,6 +29,7 @@ const BookingModal = ({ refetch, product }) => {
             name,
             email,
             productName,
+            img,
             date,
             phone,
             price,
@@ -57,7 +59,7 @@ const BookingModal = ({ refetch, product }) => {
 
             })
     }
-
+    console.log(product)
     return (
         <>
             <input type="checkbox" id="booking-modal" className="modal-toggle" />
@@ -69,6 +71,7 @@ const BookingModal = ({ refetch, product }) => {
                         <input name="name" defaultValue={user?.displayName} disabled type="text" placeholder="Your Name" className="input w-full input-bordered" />
                         <input name="email" defaultValue={user?.email} disabled type="email" placeholder="Email Address" className="input w-full input-bordered" />
                         <input name="productName" type="text" defaultValue={product?.productName} disabled placeholder="Item name" className="input w-full input-bordered" />
+                        <input name="img" type="text" defaultValue={product?.image} disabled placeholder="Product Img" className="input w-full input-bordered" />
                         <input name="price" type="text" defaultValue={product?.resalePrice} disabled placeholder="Price" className="input w-full input-bordered" />
                         <input name="date" type="text" defaultValue={formatDate} disabled placeholder="Booking date" className="input w-full input-bordered" />
                         <input name="time" type="text" defaultValue={time} disabled placeholder="Booking date" className="input w-full input-bordered" />
