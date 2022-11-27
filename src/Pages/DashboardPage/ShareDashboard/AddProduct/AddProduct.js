@@ -27,6 +27,7 @@ const AddProduct = () => {
         const quality = event.target.quality.value;
         const description = event.target.description.value;
         const duration = event.target.duration.value;
+        const sellReason = event.target.sellReason.value;
         const originalPrice = event.target.originalPrice.value;
         const date = formatDate;
         const purchaseDate = event.target.purchaseDate.value;
@@ -67,6 +68,7 @@ const AddProduct = () => {
                         date,
                         sold: false,
                         description,
+                        sellReason,
                         insertTime
                     }
                     fetch('http://localhost:5000/products', {
