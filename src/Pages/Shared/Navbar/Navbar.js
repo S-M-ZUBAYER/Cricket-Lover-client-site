@@ -24,14 +24,14 @@ const Navbar = () => {
                             </li>
                             {user ?
                                 <>
-                                    <li><Link to='addServices'>Add Services</Link></li>
-                                    <li><Link to='reviews'>My Reviews</Link></li>
+                                    <li><Link to='/addServices'>Add Services</Link></li>
+                                    <li><Link to='/reviews'>My Reviews</Link></li>
                                 </>
                                 :
                                 ""
                             }
-                            <li><Link to='blog'>Blog</Link></li>
-                            <li><Link to='contact'>Contact</Link></li>
+                            <li><Link to='/blog'>Blog</Link></li>
+                            <li><Link to='/contact'>Contact</Link></li>
                         </ul>
                     </div>
                     <Link className="btn btn-ghost normal-case text-xl"><img className="w-8 h-8 rounded-xl mr-2" src='https://i.ibb.co/LCFZm0g/Cricket-Lovere.webp' ></img>Cricket Lover</Link>
@@ -51,15 +51,15 @@ const Navbar = () => {
                         </li>
                         {user ?
                             <>
-                                <li><Link to='addServices'>Add Services</Link></li>
-                                <li><Link to='reviews'>My Reviews</Link></li>
+                                <li><Link to='/addServices'>Add Services</Link></li>
+                                <li><Link to='/reviews'>My Reviews</Link></li>
                             </>
                             :
                             ""
                         }
-                        <li><Link to='blog'>Blog</Link></li>
-                        <li><Link to='dashboard'>Dashboard</Link></li>
-                        <li><Link to='contact'>Contact</Link></li>
+                        <li><Link to='/blog'>Blog</Link></li>
+                        <li><Link to='/dashboard'>Dashboard</Link></li>
+                        <li><Link to='/contact'>Contact</Link></li>
                     </ul>
                 </div>
                 {/* <input type="checkbox" className="toggle toggle-sm ml-10" checked /> */}

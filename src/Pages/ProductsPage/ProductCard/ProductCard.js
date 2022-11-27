@@ -1,9 +1,28 @@
+import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
+import DisplaySpinner from '../../../components/Sprinners/DisplaySpinner/DisplaySpinner';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
 const ProductCard = ({ product, setBookingProduct }) => {
-    const { user } = useContext(AuthContext);
-    const { name, productName, image, sellerImg, productCategory, resalePrice, date, sellerName, verified, conditionType, mobileNo, location, description, categoryId, originalPrice, duration } = product;
+
+    const url = `http://localhost:5000/user?email=${product?.email}`;
+
+    const { data: user = [], isLoading, refetch } = useQuery({
+        queryKey: ['user', product?.email],
+        queryFn: async () => {
+            const res = await fetch(url, {
+                headers: {
+                    authorization: `bearer ${localStorage.getItem('ACCESS_TOKEN')}`
+                }
+            });
+            const data = await res.json();
+            return data;
+        }
+    })
+    refetch();
+
+
+    const { name, productName, image, sellerImg, productCategory, resalePrice, date, sellerName, verify, conditionType, mobileNo, location, description, categoryId, originalPrice, duration } = product;
     return (
         <div>
             <div className="flex flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md bg-gray-900 text-gray-100">
@@ -13,7 +32,7 @@ const ProductCard = ({ product, setBookingProduct }) => {
                     <div className="flex flex-col">
                         <div className="flex">
                             <a rel="noopener noreferrer" href="#" className="text-md font-semibold mr-1">{name}</a>
-                            {verified && <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-blue-600">
+                            {user?.verify && <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-blue-600">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>}
                         </div>

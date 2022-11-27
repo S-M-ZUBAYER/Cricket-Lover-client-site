@@ -1,19 +1,20 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../../../Context/AuthProvider/AuthProvider';
 import Moment from 'moment';
+import { useNavigate } from 'react-router-dom';
 const insertTime = new Date().getTime();
 const date = new Date().toLocaleDateString();
 const time = new Date().toLocaleTimeString();
 
 const BookingModal = ({ refetch, product }) => {
-
     // const currentDate = new Date();
     const formatDate = Moment().format('DD-MM-YYYY');
-
+    const [closeModal, setCloseModal] = useState(false);
 
     const { user } = useContext(AuthContext);
     const handleBooking = event => {
+        setCloseModal(false)
         event.preventDefault();
         const form = event.target;
         const name = form.slot.name;
@@ -65,7 +66,7 @@ const BookingModal = ({ refetch, product }) => {
     return (
         <>
             <input type="checkbox" id="booking-modal" className="modal-toggle" />
-            <div className="modal">
+            <div className={`modal ${closeModal ? 'hidden' : 'visible'} `}>
                 <div className="modal-box relative">
                     <label htmlFor="booking-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                     <h3 className="text-lg font-bold">Booking Product: {product?.ProductName}</h3>
@@ -81,7 +82,8 @@ const BookingModal = ({ refetch, product }) => {
                         <input name="location" type="text" placeholder="Location" className="input w-full input-bordered" />
                         <input name="phone" type="text" placeholder="Phone Number" className="input w-full input-bordered" />
                         <br />
-                        <input className='btn btn-accent w-full' type="submit" value="Submit" />
+
+                        <input onClick={() => setCloseModal(!closeModal)} className='btn btn-accent w-full' type="submit" value="Submit" />
                     </form>
                 </div>
             </div>
