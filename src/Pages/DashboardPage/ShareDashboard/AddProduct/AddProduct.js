@@ -53,7 +53,7 @@ const AddProduct = () => {
                         image: imgData.data.url,
                         email,
                         location,
-                        advertise: true,
+                        advertise: false,
                         available: true,
                         phone,
                         category,

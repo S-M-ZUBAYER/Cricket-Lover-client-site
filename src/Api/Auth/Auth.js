@@ -7,7 +7,7 @@ export const setAuthToken = (user, accountType) => {
     const currentUser = {
         email: user.email,
         userImg: user.photoURL,
-        signUpTime: "",
+        signUpType: "Email",
         userName: user.displayName,
         accountType,
         insertTime,
@@ -34,7 +34,7 @@ export const setAuthTokenGmail = (user, accountType) => {
     const currentUser = {
         email: user.email,
         userImg: user.photoURL,
-        signUpTime: "",
+        signUpType: "Google",
         userName: user.displayName,
         accountType: "Buyer",
         insertTime,

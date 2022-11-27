@@ -20,6 +20,7 @@ const BookingModal = ({ refetch, product }) => {
         const productName = form.productName.value;
         const img = form.img.value;
         const email = form.email.value;
+        const sellerName = form.sellerName.value;
         const date = form.date.value;
         const price = form.price.value;
         const phone = form.phone.value;
@@ -31,6 +32,7 @@ const BookingModal = ({ refetch, product }) => {
             productName,
             img,
             date,
+            sellerName,
             phone,
             price,
             location,
@@ -71,6 +73,7 @@ const BookingModal = ({ refetch, product }) => {
                         <input name="name" defaultValue={user?.displayName} disabled type="text" placeholder="Your Name" className="input w-full input-bordered" />
                         <input name="email" defaultValue={user?.email} disabled type="email" placeholder="Email Address" className="input w-full input-bordered" />
                         <input name="productName" type="text" defaultValue={product?.productName} disabled placeholder="Item name" className="input w-full input-bordered" />
+                        <input name="sellerName" defaultValue={product?.name} disabled type="text" placeholder="Your Name" className="input w-full input-bordered" />
                         <input name="img" type="text" defaultValue={product?.image} disabled placeholder="Product Img" className="input w-full input-bordered" />
                         <input name="price" type="text" defaultValue={product?.resalePrice} disabled placeholder="Price" className="input w-full input-bordered" />
                         <input name="date" type="text" defaultValue={formatDate} disabled placeholder="Booking date" className="input w-full input-bordered" />

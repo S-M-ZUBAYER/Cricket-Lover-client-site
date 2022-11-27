@@ -38,12 +38,13 @@ const Dashboard = () => {
                                 <li><Link to='/dashboard/managedoctors'>Manage Doctors</Link></li>
                             </>
                         } */}
+                        <Link className="text-left" to='/'>
+                            <button className='px-8 py-3 mt-8 ml-0 font-semibold text-lg rounded bg-red-300'>
+                                Back to homepage
+                            </button>
+                        </Link>
                     </ul>
-                    <Link to='/'>
-                        <button className='px-8 py-3 font-semibold text-lg rounded bg-red-300'>
-                            Back to homepage
-                        </button>
-                    </Link>
+
                 </div>
             </div>
             <Footer></Footer>

@@ -10,7 +10,7 @@ const MyOrders = () => {
 
     const url = `http://localhost:5000/bookings?email=${user?.email}`;
 
-    const { data: myOrders = [] } = useQuery({
+    const { data: myOrders = [], refetch } = useQuery({
         queryKey: ['bmyOrders', user?.email],
         queryFn: async () => {
             const res = await fetch(url, {
@@ -22,38 +22,38 @@ const MyOrders = () => {
             return data;
         }
     })
-
+    refetch();
     return (
         <div>
-            <div class="flex justify-center bg-slate-100 shadow-2xl m-11 rounded-lg">
+            <div className="flex justify-center bg-slate-100 shadow-2xl m-11 rounded-lg">
 
-                <div class="flex flex-col justify-center  my-10 w-[90%] space-y-28 lg:space-y-24 max-w-7xl  ">
-                    <div class="flex flex-col justify-center items-center text-center">
-                        <div class="text-xl md:text-3xl text-black font-bold uppercase">Contact Us</div>
-                        <div class="text-sm md:text-xl text-black font-medium">Get in touch and let us know how we can help.
+                <div className="flex flex-col justify-center  my-10 w-[90%] space-y-28 lg:space-y-24 max-w-7xl  ">
+                    <div className="flex flex-col justify-center items-center text-center">
+                        <div className="text-xl md:text-3xl text-green-500 font-bold uppercase ">Your available orders!!!</div>
+                        <div className="text-sm md:text-xl text-black font-medium">Please complete your payment for next process....
                         </div>
 
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {myOrders.map(order =>
 
-                            <div class="flex flex-col justify-center items-center lg:flex-row space-y-28 lg:space-y-0  lg:space-x-10">
+                            <div className="flex flex-col justify-center items-center lg:flex-row space-y-28 lg:space-y-0  lg:space-x-10 mb-12">
                                 <div
-                                    class="bg-white shadow-lg flex flex-col justify-center rounded-lg items-center py-4 h-56 md:w-[80%] lg:w-fit">
-                                    <div class="-mt-10 ">
-                                        <img className="h-16 w-16 rounded-full" src={order.img} alt="" />
+                                    className="bg-white shadow-lg flex flex-col justify-center rounded-lg items-center px-4 py-4 h-56 md:w-[80%] lg:w-fit">
+                                    <div className="-mt-16 lg:-mt-20">
+                                        <img className="h-12 w-12 rounded-full" src={order.img} alt="" />
                                     </div>
-                                    <div class="font-semibold text-2xl">{order.productName}</div>
-                                    <div className="flex justify-between gap-8 p-5">
-                                        <p>Seller Name: {order.name}</p>
-                                        <p>Location: {order.location}</p>
+                                    <div className="font-semibold text-xl">{order.productName}</div>
+                                    <div className="flex justify-between text-left gap-8 pt-3 text-sm font-semibold">
+                                        <p>Seller: <span className="text-xs">{order.sellerName}</span> </p>
+                                        <p>Location: <span className="text-xs">{order.location}</span></p>
                                     </div>
-                                    <div className="flex gap-8 justify-between p-5">
-                                        <p>Price: {order.price}</p>
+                                    <div className="flex gap-8 justify-between text-left  text-sm font-semibold">
+                                        <p>Price: <span>{order.price}</span></p>
                                         <p>Date: {order.date}</p>
                                     </div>
                                     <p
-                                        class="text-center text-sm px-6 bg-blue-500 py-2 rounded-3xl hover:bg-cyan-500 p-5 text-white font-medium">
+                                        className="text-center text-sm px-6 bg-blue-500 py-2 mt-5 rounded-3xl hover:bg-cyan-500 p-5 text-white font-medium">
                                         <Link to="/myOrder/payment">Pay</Link>
                                     </p>
 
