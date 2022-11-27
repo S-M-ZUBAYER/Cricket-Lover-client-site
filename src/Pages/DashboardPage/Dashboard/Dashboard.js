@@ -39,7 +39,7 @@ const Dashboard = () => {
                             </>
                         } */}
                         <Link className="text-left" to='/'>
-                            <button className='px-8 py-3 mt-8 ml-0 font-semibold text-lg rounded bg-red-300'>
+                            <button className='px-4 py-2 mt-8 ml-0 font-semibold text-base lg:text-lg rounded bg-green-300'>
                                 Back to homepage
                             </button>
                         </Link>

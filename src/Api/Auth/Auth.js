@@ -56,3 +56,4 @@ export const setAuthTokenGmail = (user, accountType) => {
             toast.success('user data added')
         })
 }
+

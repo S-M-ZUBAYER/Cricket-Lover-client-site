@@ -1,25 +1,52 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import EachUser from './EachUser';
+import { AuthContext } from '../../../../Context/AuthProvider/AuthProvider';
+import { useQuery } from '@tanstack/react-query';
+import DisplaySpinner from '../../../../components/Sprinners/DisplaySpinner/DisplaySpinner';
+import toast from 'react-hot-toast';
 
 const AllUser = () => {
-    const [users, setUsers] = useState([]);
 
-    useEffect(() => {
-        const usersfetch = async () => {
 
-            const config = {
+    const url = `http://localhost:5000/users`;
+
+    const { data: users = [], isLoading, refetch } = useQuery({
+        queryKey: ['users'],
+        queryFn: async () => {
+            const res = await fetch(url, {
                 headers: {
-                    authorization: `bearer `
+                    authorization: `bearer ${localStorage.getItem('ACCESS_TOKEN')}`
                 }
-            }
-            const data = await axios.get('http://localhost:5000/users', config)
-                .then(res => {
-                    setUsers(res?.data);
-                })
+            });
+            const data = await res.json();
+            return data;
         }
-        usersfetch();
-    }, []);
+    })
+
+    const handleToDelete = (user) => {
+        console.log(`${user.userName} deleted successfully`)
+        fetch(`http://localhost:5000/users/${user._id}`, {
+            method: "DELETE",
+            headers: {
+                authorization: `bearer ${localStorage.getItem('ACCESS_TOKEN')}`
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount > 0) {
+                    refetch();
+                    toast.success(`${user.name} deleted successfully`)
+                }
+                console.log(data);
+
+            })
+    }
+
+    refetch();
+    if (isLoading) {
+        return <DisplaySpinner></DisplaySpinner>
+    }
     return (
 
 
@@ -45,6 +72,7 @@ const AllUser = () => {
                         <EachUser
                             user={user}
                             key={user._id}
+                            handleToDelete={handleToDelete}
                         ></EachUser>
                     )}
 

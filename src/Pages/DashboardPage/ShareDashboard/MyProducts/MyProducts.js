@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
+import DisplaySpinner from '../../../../components/Sprinners/DisplaySpinner/DisplaySpinner';
 import { AuthContext } from '../../../../Context/AuthProvider/AuthProvider';
 import EachProduct from './EachProduct';
 
@@ -8,7 +9,7 @@ const MyProducts = () => {
 
     const url = `http://localhost:5000/products?email=${user?.email}`;
 
-    const { data: myProducts = [], refetch } = useQuery({
+    const { data: myProducts = [], isLoading, refetch } = useQuery({
         queryKey: ['myProducts', user?.email],
         queryFn: async () => {
             const res = await fetch(url, {
@@ -21,7 +22,9 @@ const MyProducts = () => {
         }
     })
     refetch();
-
+    if (isLoading) {
+        return <DisplaySpinner></DisplaySpinner>
+    }
     return (
         <div>
             <h2 className="text-amber-300 font-bold text-3xl">Your available added Products!!!</h2>

@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { data } from 'autoprefixer';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import DisplaySpinner from '../../components/Sprinners/DisplaySpinner/DisplaySpinner';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
 const MyOrders = () => {
@@ -10,7 +11,7 @@ const MyOrders = () => {
 
     const url = `http://localhost:5000/bookings?email=${user?.email}`;
 
-    const { data: myOrders = [], refetch } = useQuery({
+    const { data: myOrders = [], isLoading, refetch } = useQuery({
         queryKey: ['bmyOrders', user?.email],
         queryFn: async () => {
             const res = await fetch(url, {
@@ -23,6 +24,9 @@ const MyOrders = () => {
         }
     })
     refetch();
+    if (isLoading) {
+        return <DisplaySpinner></DisplaySpinner>
+    }
     return (
         <div>
             <div className="flex justify-center bg-slate-100 shadow-2xl m-11 rounded-lg">
