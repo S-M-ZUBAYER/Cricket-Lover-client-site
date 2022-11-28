@@ -16,7 +16,7 @@ export const setAuthToken = (user, accountType) => {
 
 
     }
-    fetch(`http://localhost:5000/user/${user?.email}`, {
+    fetch(`https://cricket-lover-server-site-s-m-zubayer.vercel.app/user/${user?.email}`, {
         method: "PUT",
         headers: {
             'content-type': 'application/json'
@@ -42,7 +42,7 @@ export const setAuthTokenGmail = (user, accountType) => {
         time
 
     }
-    fetch(`http://localhost:5000/user/${user?.email}`, {
+    fetch(`https://cricket-lover-server-site-s-m-zubayer.vercel.app/user/${user?.email}`, {
         method: "PUT",
         headers: {
             'content-type': 'application/json'

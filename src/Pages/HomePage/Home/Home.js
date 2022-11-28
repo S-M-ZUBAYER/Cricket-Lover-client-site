@@ -13,7 +13,7 @@ const Home = () => {
     const { loading, setLoading } = useContext(AuthContext);
     const [categories, setCategories] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/categories')
+        fetch('https://cricket-lover-server-site-s-m-zubayer.vercel.app/categories')
 
             .then(res => res.json())
             .then(data => {
@@ -25,7 +25,7 @@ const Home = () => {
 
     }, [])
 
-    const url = `http://localhost:5000/products`;
+    const url = `https://cricket-lover-server-site-s-m-zubayer.vercel.app/products`;
 
     const { data: products = [], isLoading, refetch } = useQuery({
         queryKey: ['products'],
@@ -45,10 +45,15 @@ const Home = () => {
         <div>
             <Banner></Banner>
             {
-                advertiseProducts.length > 0 && <Advertise></Advertise>
+                advertiseProducts.length > 0 && <Advertise
+                    advertiseProducts={advertiseProducts}
+                ></Advertise>
             }
-
-            <div className="mt-12 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-16">
+                <h2 className="font-bold text-blue-400 text-3xl mb-5">All categories collections!!!</h2>
+                <p className="mx-12">That all are the new collection for all buyers. Now term to choose the best product and buy that product to get the fresh one. In cricket, you must require all equipment to play it. Playing cricket with no cricket equipment is a waste of time. BCCI had been set similar laws to play cricket. You must be aware of cricket equipment if you are a professional cricketer. </p>
+            </div>
+            <div className="my-12 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                 {loading ?
                     <DisplaySpinner></DisplaySpinner> :
                     <>

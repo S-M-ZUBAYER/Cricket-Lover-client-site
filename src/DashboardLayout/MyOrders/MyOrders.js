@@ -9,7 +9,7 @@ const MyOrders = () => {
 
     const { user } = useContext(AuthContext);
 
-    const url = `http://localhost:5000/bookings?email=${user?.email}`;
+    const url = `https://cricket-lover-server-site-s-m-zubayer.vercel.app/bookings?email=${user?.email}`;
 
     const { data: myOrders = [], isLoading, refetch } = useQuery({
         queryKey: ['bmyOrders', user?.email],
@@ -56,10 +56,15 @@ const MyOrders = () => {
                                         <p>Price: <span>{order.price}</span></p>
                                         <p>Date: {order.date}</p>
                                     </div>
-                                    <p
-                                        className="text-center text-sm px-6 bg-blue-500 py-2 mt-5 rounded-3xl hover:bg-cyan-500 p-5 text-white font-medium">
-                                        <Link to="/myOrder/payment">Pay</Link>
-                                    </p>
+                                    {
+                                        order?.paid ?
+                                            <p className="text-center text-sm px-6 bg-green-500 py-2 mt-5 rounded-3xl p-5 text-white font-medium">Paid</p> :
+                                            <p
+                                                className="text-center text-sm px-6 bg-blue-500 py-2 mt-5 rounded-3xl hover:bg-cyan-500 p-5 text-white font-medium">
+                                                <Link to={`/dashboard/payment/${order._id}`}>Pay</Link>
+                                            </p>
+                                    }
+
 
                                 </div>
 

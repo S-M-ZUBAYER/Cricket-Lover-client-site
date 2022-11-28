@@ -6,7 +6,7 @@ import { useQuery } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
 
 const AllSellers = () => {
-    const url = `http://localhost:5000/users`;
+    const url = `https://cricket-lover-server-site-s-m-zubayer.vercel.app/users`;
 
     const { data: users = [], isLoading, refetch } = useQuery({
         queryKey: ['users'],
@@ -23,7 +23,7 @@ const AllSellers = () => {
 
     const handleToDelete = (user) => {
         console.log(`${user.userName} deleted successfully`)
-        fetch(`http://localhost:5000/users/${user._id}`, {
+        fetch(`https://cricket-lover-server-site-s-m-zubayer.vercel.app/users/${user._id}`, {
             method: "DELETE",
             headers: {
                 authorization: `bearer ${localStorage.getItem('ACCESS_TOKEN')}`

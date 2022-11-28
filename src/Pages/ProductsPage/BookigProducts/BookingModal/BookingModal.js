@@ -14,10 +14,10 @@ const BookingModal = ({ refetch, product }) => {
 
     const { user } = useContext(AuthContext);
     const handleBooking = event => {
-        setCloseModal(false)
+        // setCloseModal(false)
         event.preventDefault();
         const form = event.target;
-        const name = form.slot.name;
+        const name = form.name.value;
         const productName = form.productName.value;
         const img = form.img.value;
         const email = form.email.value;
@@ -30,10 +30,12 @@ const BookingModal = ({ refetch, product }) => {
         const booking = {
             name,
             email,
+            productId: product._id,
             productName,
             img,
             date,
             sellerName,
+            paid: false,
             phone,
             price,
             location,
@@ -41,7 +43,7 @@ const BookingModal = ({ refetch, product }) => {
             insertTime
         }
 
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://cricket-lover-server-site-s-m-zubayer.vercel.app/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -54,6 +56,7 @@ const BookingModal = ({ refetch, product }) => {
                     // setBooking(null);
                     form.reset();
                     toast.success('Booking Confirmed Successfully');
+
                 }
                 else {
                     // setBooking(null);
@@ -83,7 +86,7 @@ const BookingModal = ({ refetch, product }) => {
                         <input name="phone" type="text" placeholder="Phone Number" className="input w-full input-bordered" />
                         <br />
 
-                        <input onClick={() => setCloseModal(!closeModal)} className='btn btn-accent w-full' type="submit" value="Submit" />
+                        <input onClick={() => setCloseModal(closeModal)} className='btn btn-accent w-full' type="submit" value="Submit" />
                     </form>
                 </div>
             </div>

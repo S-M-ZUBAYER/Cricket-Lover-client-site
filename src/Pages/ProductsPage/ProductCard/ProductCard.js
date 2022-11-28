@@ -5,7 +5,7 @@ import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
 const ProductCard = ({ product, setBookingProduct }) => {
 
-    const url = `http://localhost:5000/user?email=${product?.email}`;
+    const url = `https://cricket-lover-server-site-s-m-zubayer.vercel.app/user?email=${product?.email}`;
 
     const { data: user = [], isLoading, refetch } = useQuery({
         queryKey: ['user', product?.email],

@@ -9,13 +9,16 @@ import AddProduct from "../../Pages/DashboardPage/ShareDashboard/AddProduct/AddP
 import AllBuyers from "../../Pages/DashboardPage/ShareDashboard/AllBuyers/AllBuyers";
 import AllSellers from "../../Pages/DashboardPage/ShareDashboard/AllSellers/AllSellers";
 import AllUser from "../../Pages/DashboardPage/ShareDashboard/AllUser/AllUser";
-import MyBuyers from "../../Pages/DashboardPage/ShareDashboard/MyBuyers/MyBuyers";
+import MyBuyers from "../../Pages/DashboardPage/ShareDashboard/WishList/WishList";
 import MyProducts from "../../Pages/DashboardPage/ShareDashboard/MyProducts/MyProducts";
 import ReportedItems from "../../Pages/DashboardPage/ShareDashboard/ReportedItems/ReportedItems";
 import ErrorPage from "../../Pages/ErrorPage/ErrorPage";
 import Home from "../../Pages/HomePage/Home/Home";
 import Products from "../../Pages/ProductsPage/Products/Products";
+import Payment from "../../PaymentPage/Payment/Payment";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import WishList from "../../Pages/DashboardPage/ShareDashboard/WishList/WishList";
+import Contact from "../../Pages/ContactPage/Contact";
 
 const router = createBrowserRouter([
     {
@@ -42,6 +45,10 @@ const router = createBrowserRouter([
             {
                 path: '/category/:id',
                 element: <PrivateRoute><Products></Products></PrivateRoute>
+            },
+            {
+                path: '/contact',
+                element: <Contact></Contact>
             }
 
         ]
@@ -64,8 +71,8 @@ const router = createBrowserRouter([
                 element: <MyProducts></MyProducts>
             },
             {
-                path: '/dashboard/myBuyers',
-                element: <MyBuyers></MyBuyers>
+                path: '/dashboard/wishList',
+                element: <WishList></WishList>
             },
             {
                 path: '/dashboard/allSellers',
@@ -82,6 +89,11 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/allUsers',
                 element: <AllUser></AllUser>
+            },
+            {
+                path: '/dashboard/payment/:id',
+                element: <Payment></Payment>,
+                loader: ({ params }) => fetch(`https://cricket-lover-server-site-s-m-zubayer.vercel.app/booking/${params?.id}`)
             }
 
         ]

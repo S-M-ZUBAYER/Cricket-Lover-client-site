@@ -9,7 +9,7 @@ import toast from 'react-hot-toast';
 const AllUser = () => {
 
 
-    const url = `http://localhost:5000/users`;
+    const url = `https://cricket-lover-server-site-s-m-zubayer.vercel.app/users`;
 
     const { data: users = [], isLoading, refetch } = useQuery({
         queryKey: ['users'],
@@ -26,7 +26,7 @@ const AllUser = () => {
 
     const handleToDelete = (user) => {
         console.log(`${user.userName} deleted successfully`)
-        fetch(`http://localhost:5000/users/${user._id}`, {
+        fetch(`https://cricket-lover-server-site-s-m-zubayer.vercel.app/users/${user._id}`, {
             method: "DELETE",
             headers: {
                 authorization: `bearer ${localStorage.getItem('ACCESS_TOKEN')}`
@@ -41,6 +41,22 @@ const AllUser = () => {
                 console.log(data);
 
             })
+    }
+    const handleMakeAdmin = id => {
+        fetch(`https://cricket-lover-server-site-s-m-zubayer.vercel.app/users/admin/${id}`, {
+            method: 'PUT',
+            headers: {
+                authorization: `bearer ${localStorage.getItem('ACCESS_TOKEN')}`
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    toast.success('Make admin successfully');
+                    refetch();
+                }
+            })
+
     }
 
     refetch();
@@ -73,6 +89,7 @@ const AllUser = () => {
                             user={user}
                             key={user._id}
                             handleToDelete={handleToDelete}
+                            handleMakeAdmin={handleMakeAdmin}
                         ></EachUser>
                     )}
 
