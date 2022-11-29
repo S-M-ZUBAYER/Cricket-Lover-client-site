@@ -71,7 +71,7 @@ const AddProduct = () => {
                         sellReason,
                         insertTime
                     }
-                    fetch('https://cricket-lover-server-site-s-m-zubayer.vercel.app/products', {
+                    fetch('http://localhost:5000/products', {
                         method: "POST",
                         headers: {
                             'content-type': 'application/json',
@@ -117,7 +117,7 @@ const AddProduct = () => {
     //             }
     //         })
     //         .catch(err => console.log(err));
-    //     fetch('https://cricket-lover-server-site-s-m-zubayer.vercel.app/products', {
+    //     fetch('http://localhost:5000/products', {
     //         method: "POST",
     //         headers: {
     //             'content-type': 'application/json',
@@ -155,6 +155,9 @@ const AddProduct = () => {
                                 <option>Balls</option>
                                 <option>Bats</option>
                                 <option>Helmets</option>
+                                <option>Gloves</option>
+                                <option>Stumps</option>
+                                <option>pads</option>
                             </select>
                         </div>
                     </div>

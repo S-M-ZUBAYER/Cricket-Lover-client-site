@@ -16,7 +16,7 @@ export const setAuthToken = (user, accountType) => {
 
 
     }
-    fetch(`https://cricket-lover-server-site-s-m-zubayer.vercel.app/user/${user?.email}`, {
+    fetch(`http://localhost:5000/user/${user?.email}`, {
         method: "PUT",
         headers: {
             'content-type': 'application/json'
@@ -25,8 +25,8 @@ export const setAuthToken = (user, accountType) => {
     })
         .then(res => res.json())
         .then(data => {
-            console.log(data)
-            localStorage.setItem('Cricket-Lover', data.token);
+            console.log(data.token)
+            localStorage.setItem('Cricket-Lover', data?.token);
             toast.success('user data added')
         })
 }
@@ -42,7 +42,7 @@ export const setAuthTokenGmail = (user, accountType) => {
         time
 
     }
-    fetch(`https://cricket-lover-server-site-s-m-zubayer.vercel.app/user/${user?.email}`, {
+    fetch(`http://localhost:5000/user/${user?.email}`, {
         method: "PUT",
         headers: {
             'content-type': 'application/json'
@@ -52,8 +52,7 @@ export const setAuthTokenGmail = (user, accountType) => {
         .then(res => res.json())
         .then(data => {
             console.log(data)
-            localStorage.setItem('Cricket-Lover', data.token);
+            localStorage.setItem('Cricket-Lover', data?.token);
             toast.success('user data added')
         })
 }
-

@@ -2,115 +2,31 @@
     {
         "categoryName": "Bats",
         "categoryImg": "https://i.ibb.co/7W634kX/GN-MAAX-500-J-Bat.jpg",
-        "products": [
-            {
-                "productCategory": "Bat",
-                "productImg": "https://i.ibb.co/hfzf6CJ/Experience2.jpg",
-                "ProductName": "infinix bat",
-                "originalPrice": 100,
-                "resalePrice": 57,
-                "host": "John Doe",
-                "rating": "64",
-                "date": "12/12/21",
-                "sellerName": "Sakil Ahmed",
-                "verified": true,
-                "conditionType": "Good",
-                "mobileNo": "98734397824932",
-                "location": "MirPur",
-                "description": "kjsdofodsofosdofoidasfiodfss"
-            },
-            {
-                "productCategory": "Bat",
-                "productImg": "https://i.ibb.co/7W634kX/GN-MAAX-500-J-Bat.jpg",
-                "ProductName": "Max bat",
-                "originalPrice": 100,
-                "resalePrice": 57,
-                "host": "John Doe",
-                "rating": "64",
-                "date": "12/12/21",
-                "sellerName": "Sakil Ahmed",
-                "verified": true,
-                "conditionType": "Good",
-                "mobileNo": "98734397824932",
-                "location": "MirPur",
-                "description": "kjsdofodsofosdofoidasfiodfss"
-            }
-        ]
+        "categoryId": 1
     },
     {
         "categoryName": "Balls",
         "categoryImg": "https://i.ibb.co/QCF74K6/th.jpg",
-        "products": [
-            {
-                "productCategory": "Ball",
-                "productImg": "https://i.ibb.co/hfzf6CJ/Experience2.jpg",
-                "ProductName": "infinix bat",
-                "originalPrice": 100,
-                "resalePrice": 57,
-                "host": "John Doe",
-                "rating": "64",
-                "date": "12/12/21",
-                "sellerName": "Sakil Ahmed",
-                "verified": true,
-                "conditionType": "Good",
-                "mobileNo": "98734397824932",
-                "location": "MirPur",
-                "description": "kjsdofodsofosdofoidasfiodfss"
-            },
-            {
-                "productCategory": "Ball",
-                "productImg": "https://i.ibb.co/QCF74K6/th.jpg",
-                "ProductName": "Max bat",
-                "originalPrice": 100,
-                "resalePrice": 57,
-                "host": "John Doe",
-                "rating": "64",
-                "date": "12/12/21",
-                "sellerName": "Sakil Ahmed",
-                "verified": true,
-                "conditionType": "Good",
-                "mobileNo": "98734397824932",
-                "location": "MirPur",
-                "description": "kjsdofodsofosdofoidasfiodfss"
-            }
-        ]
+        "categoryId": 2
     },
     {
         "categoryName": "Helmets",
         "categoryImg": "https://i.ibb.co/0Mtg98c/helmet.webp",
-        "products": [
-            {
-                "productCategory": "Helmet",
-                "productImg": "https://i.ibb.co/hfzf6CJ/Experience2.jpg",
-                "ProductName": "infinix bat",
-                "originalPrice": 100,
-                "resalePrice": 57,
-                "host": "John Doe",
-                "rating": "64",
-                "date": "12/12/21",
-                "sellerName": "Sakil Ahmed",
-                "verified": true,
-                "conditionType": "Good",
-                "mobileNo": "98734397824932",
-                "location": "MirPur",
-                "description": "kjsdofodsofosdofoidasfiodfss"
-            },
-            {
-                "productCategory": "Helmet",
-                "productImg": "https://i.ibb.co/0Mtg98c/helmet.webp",
-                "ProductName": "Max bat",
-                "originalPrice": 100,
-                "resalePrice": 57,
-                "host": "John Doe",
-                "rating": "64",
-                "date": "12/12/21",
-                "sellerName": "Sakil Ahmed",
-                "verified": true,
-                "conditionType": "Good",
-                "mobileNo": "98734397824932",
-                "location": "MirPur",
-                "description": "kjsdofodsofosdofoidasfiodfss"
-            }
-        ]
+        "categoryId": 3
+    },
+    {
+        "categoryName": "Gloves",
+        "categoryImg": "https://i.ibb.co/QDkKK58/g-5.jpg",
+        "categoryId": 4
+    },
+    {
+        "categoryName": "Stumps",
+        "categoryImg": "https://i.ibb.co/rvBtf5R/s-1.jpg",
+        "categoryId": 5
+    },
+    {
+        "categoryName": "pads",
+        "categoryImg": "https://i.ibb.co/0mrd750/p-1.jpg",
+        "categoryId": 6
     }
 ]

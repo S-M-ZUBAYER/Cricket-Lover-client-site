@@ -15,7 +15,7 @@ const Dashboard = () => {
     const [isBuyer] = useBuyer(user?.email)
     const [isSeller] = useSeller(user?.email)
 
-    const url = `https://cricket-lover-server-site-s-m-zubayer.vercel.app/users/${user?.email}`;
+    const url = `http://localhost:5000/users/${user?.email}`;
 
     const { data: users = [], isLoading, refetch } = useQuery({
         queryKey: ['users'],
@@ -52,14 +52,14 @@ const Dashboard = () => {
                                 <li><Link to='/dashboard/allBuyers'>All Buyers</Link></li>
                             </>
                         }
-                        {users?.accountType === "Buyer" &&
+                        {users?.accountType === "Buyer" && !isAdmin &&
                             <>
                                 <li><Link to='/dashboard/orders'>My Orders</Link></li>
                                 <li><Link to='/dashboard/wishList'>WishList</Link></li>
                             </>
                         }
 
-                        {users?.accountType === "Seller" &&
+                        {users?.accountType === "Seller" && !isAdmin &&
                             <>
                                 <li><Link to='/dashboard/addProduct'>Add A product </Link></li>
                                 <li><Link to='/dashboard/myProducts'>My Products</Link></li>

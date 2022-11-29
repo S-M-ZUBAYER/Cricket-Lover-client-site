@@ -9,7 +9,7 @@ const MyOrders = () => {
 
     const { user } = useContext(AuthContext);
 
-    const url = `https://cricket-lover-server-site-s-m-zubayer.vercel.app/bookings?email=${user?.email}`;
+    const url = `http://localhost:5000/bookings?email=${user?.email}`;
 
     const { data: myOrders = [], isLoading, refetch } = useQuery({
         queryKey: ['bmyOrders', user?.email],
@@ -38,12 +38,15 @@ const MyOrders = () => {
                         </div>
 
                     </div>
+                    {myOrders.length === 0 && <div className="text-2xl font-semibold text-red-600">
+                        No order available please order product...
+                    </div>}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {myOrders.map(order =>
 
                             <div className="flex flex-col justify-center items-center lg:flex-row space-y-28 lg:space-y-0  lg:space-x-10 mb-12">
                                 <div
-                                    className="bg-white shadow-lg flex flex-col justify-center rounded-lg items-center px-4 py-4 h-56 md:w-[80%] lg:w-fit">
+                                    className=" bg-lime-300 shadow-lg flex flex-col justify-center rounded-lg items-center px-4 py-4 h-56 md:w-[80%] lg:w-fit">
                                     <div className="-mt-16 lg:-mt-20">
                                         <img className="h-12 w-12 rounded-full" src={order.img} alt="" />
                                     </div>

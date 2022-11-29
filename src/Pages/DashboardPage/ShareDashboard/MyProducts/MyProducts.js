@@ -7,7 +7,7 @@ import EachProduct from './EachProduct';
 const MyProducts = () => {
     const { user } = useContext(AuthContext);
 
-    const url = `https://cricket-lover-server-site-s-m-zubayer.vercel.app/products?email=${user?.email}`;
+    const url = `http://localhost:5000/products?email=${user?.email}`;
 
     const { data: myProducts = [], isLoading, refetch } = useQuery({
         queryKey: ['myProducts', user?.email],
@@ -21,6 +21,9 @@ const MyProducts = () => {
             return data;
         }
     })
+
+    const products = myProducts.filter(product => product?.email === user?.email)
+
     refetch();
     if (isLoading) {
         return <DisplaySpinner></DisplaySpinner>
@@ -29,11 +32,16 @@ const MyProducts = () => {
         <div>
             <h2 className="text-amber-300 font-bold text-3xl">Your available added Products!!!</h2>
 
+            {products.length === 0 && <div className="text-2xl font-semibold text-red-600">
+                No Product available please add product...
+            </div>}
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {
-                    myProducts.map(product => <EachProduct
+                    products.map(product => <EachProduct
                         product={product}
                         key={product._id}
+                        refetch={refetch}
                     ></EachProduct>)
                 }
             </div>

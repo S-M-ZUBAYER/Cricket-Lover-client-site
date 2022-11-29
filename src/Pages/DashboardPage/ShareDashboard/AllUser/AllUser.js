@@ -3,30 +3,48 @@ import axios from 'axios';
 import EachUser from './EachUser';
 import { AuthContext } from '../../../../Context/AuthProvider/AuthProvider';
 import { useQuery } from '@tanstack/react-query';
-import DisplaySpinner from '../../../../components/Sprinners/DisplaySpinner/DisplaySpinner';
 import toast from 'react-hot-toast';
+import DisplaySpinner from '../../../../components/Sprinners/DisplaySpinner/DisplaySpinner';
 
 const AllUser = () => {
 
+    const { user, loading, setLoading } = useContext(AuthContext);
+    const [users, setUsers] = useState([])
+    // const url = `http://localhost:5000/users`;
 
-    const url = `https://cricket-lover-server-site-s-m-zubayer.vercel.app/users`;
+    // const { data: users = [], isLoading, refetch } = useQuery({
+    //     queryKey: ['users'],
+    //     queryFn: async () => {
+    //         const res = await fetch(url, {
+    //             headers: {
+    //                 authorization: `bearer ${localStorage.getItem('ACCESS_TOKEN')}`
+    //             }
+    //         });
+    //         const data = await res.json();
+    //         return data;
+    //     }
+    // })
 
-    const { data: users = [], isLoading, refetch } = useQuery({
-        queryKey: ['users'],
-        queryFn: async () => {
-            const res = await fetch(url, {
-                headers: {
-                    authorization: `bearer ${localStorage.getItem('ACCESS_TOKEN')}`
-                }
+    useEffect(() => {
+        fetch('http://localhost:5000/users')
+
+            .then(res => res.json())
+            .then(data => {
+                setLoading(true)
+                setUsers(data);
+                console.log(data)
+                setLoading(false)
             });
-            const data = await res.json();
-            return data;
-        }
-    })
+
+    }, [])
+
+    if (loading) {
+        return <DisplaySpinner></DisplaySpinner>
+    }
 
     const handleToDelete = (user) => {
-        console.log(`${user.userName} deleted successfully`)
-        fetch(`https://cricket-lover-server-site-s-m-zubayer.vercel.app/users/${user._id}`, {
+        console.log(`${user?.userName} deleted successfully`)
+        fetch(`http://localhost:5000/users/${user._id}`, {
             method: "DELETE",
             headers: {
                 authorization: `bearer ${localStorage.getItem('ACCESS_TOKEN')}`
@@ -35,32 +53,32 @@ const AllUser = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.deletedCount > 0) {
-                    refetch();
                     toast.success(`${user.name} deleted successfully`)
+                    const newUsers = users?.filter(usr => usr._id !== user?._id);
+                    setUsers(newUsers);
                 }
                 console.log(data);
 
             })
     }
-    const handleMakeAdmin = id => {
-        fetch(`https://cricket-lover-server-site-s-m-zubayer.vercel.app/users/admin/${id}`, {
-            method: 'PUT',
-            headers: {
-                authorization: `bearer ${localStorage.getItem('ACCESS_TOKEN')}`
-            }
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.modifiedCount > 0) {
-                    toast.success('Make admin successfully');
-                    refetch();
-                }
-            })
+    // const handleMakeAdmin = id => {
+    //     fetch(`http://localhost:5000/users/admin/${id}`, {
+    //         method: 'PUT',
+    //         headers: {
+    //             authorization: `bearer ${localStorage.getItem('ACCESS_TOKEN')}`
+    //         }
+    //     })
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             if (data.modifiedCount > 0) {
+    //                 toast.success('Make admin successfully');
+    //                 refetch();
+    //             }
+    //         })
 
-    }
+    // }
 
-    refetch();
-    if (isLoading) {
+    if (loading) {
         return <DisplaySpinner></DisplaySpinner>
     }
     return (
@@ -84,12 +102,12 @@ const AllUser = () => {
                             <th>Delete</th>
                         </tr>
                     </thead>
-                    {users.map(user =>
+                    {users?.length !== 0 && users?.map(user =>
                         <EachUser
                             user={user}
                             key={user._id}
                             handleToDelete={handleToDelete}
-                            handleMakeAdmin={handleMakeAdmin}
+                        // handleMakeAdmin={handleMakeAdmin}
                         ></EachUser>
                     )}
 

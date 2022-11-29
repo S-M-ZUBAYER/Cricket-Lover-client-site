@@ -1,29 +1,48 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import EachSeller from './EachSeller';
 import DisplaySpinner from '../../../../components/Sprinners/DisplaySpinner/DisplaySpinner';
 import { useQuery } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
+import { AuthContext } from '../../../../Context/AuthProvider/AuthProvider';
 
 const AllSellers = () => {
-    const url = `https://cricket-lover-server-site-s-m-zubayer.vercel.app/users`;
 
-    const { data: users = [], isLoading, refetch } = useQuery({
-        queryKey: ['users'],
-        queryFn: async () => {
-            const res = await fetch(url, {
-                headers: {
-                    authorization: `bearer ${localStorage.getItem('ACCESS_TOKEN')}`
-                }
+    const { user, loading, setLoading } = useContext(AuthContext);
+    const [users, setUsers] = useState([])
+    // const url = `http://localhost:5000/users`;
+
+    // const { data: users = [], isLoading, refetch } = useQuery({
+    //     queryKey: ['users'],
+    //     queryFn: async () => {
+    //         const res = await fetch(url, {
+    //             headers: {
+    //                 authorization: `bearer ${localStorage.getItem('ACCESS_TOKEN')}`
+    //             }
+    //         });
+    //         const data = await res.json();
+    //         return data;
+    //     }
+    // });
+    useEffect(() => {
+        fetch('http://localhost:5000/users')
+
+            .then(res => res.json())
+            .then(data => {
+                setLoading(true)
+                setUsers(data);
+                console.log(data)
+                setLoading(false)
             });
-            const data = await res.json();
-            return data;
-        }
-    });
+
+    }, [])
+
+    if (loading) {
+        return <DisplaySpinner></DisplaySpinner>
+    }
 
     const handleToDelete = (user) => {
-        console.log(`${user.userName} deleted successfully`)
-        fetch(`https://cricket-lover-server-site-s-m-zubayer.vercel.app/users/${user._id}`, {
+        fetch(`http://localhost:5000/users/${user._id}`, {
             method: "DELETE",
             headers: {
                 authorization: `bearer ${localStorage.getItem('ACCESS_TOKEN')}`
@@ -32,7 +51,8 @@ const AllSellers = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.deletedCount > 0) {
-                    refetch();
+                    const newUsers = users?.filter(usr => usr._id !== user?._id);
+                    setUsers(newUsers);
                     toast.success(`${user.name} deleted successfully`)
                 }
                 console.log(data);
@@ -40,11 +60,11 @@ const AllSellers = () => {
             })
     }
 
-    refetch();
-    if (isLoading) {
-        return <DisplaySpinner></DisplaySpinner>
-    }
-    const Sellers = users.filter(user => user.accountType === "Seller")
+    // refetch();
+    // if (isLoading) {
+    //     return <DisplaySpinner></DisplaySpinner>
+    // }
+    const Sellers = users?.filter(user => user?.accountType === "Seller")
 
     return (
 
@@ -67,7 +87,7 @@ const AllSellers = () => {
                             <th>Delete</th>
                         </tr>
                     </thead>
-                    {Sellers.map(user =>
+                    {Sellers?.map(user =>
                         <EachSeller
                             user={user}
                             key={user._id}

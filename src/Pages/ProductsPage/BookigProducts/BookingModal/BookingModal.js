@@ -43,7 +43,7 @@ const BookingModal = ({ refetch, product }) => {
             insertTime
         }
 
-        fetch('https://cricket-lover-server-site-s-m-zubayer.vercel.app/bookings', {
+        fetch('http://localhost:5000/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

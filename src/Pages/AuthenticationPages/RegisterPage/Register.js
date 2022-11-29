@@ -42,6 +42,7 @@ const Register = () => {
                                 console.log(result)
                                 setAuthToken(result.user, accountType)
                                 toast.success('Registration Completed successfully...');
+                                navigate('/')
                                 setLoading(false)
                             })
                     })

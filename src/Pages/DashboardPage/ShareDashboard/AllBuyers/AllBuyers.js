@@ -15,7 +15,7 @@ const AllBuyers = () => {
                     authorization: `bearer `
                 }
             }
-            const data = await axios.get('https://cricket-lover-server-site-s-m-zubayer.vercel.app/users', config)
+            const data = await axios.get('http://localhost:5000/users', config)
                 .then(res => {
                     setUsers(res?.data);
                 })
@@ -25,7 +25,7 @@ const AllBuyers = () => {
 
     const handleToDelete = (user) => {
         console.log(`${user.userName} deleted successfully`)
-        fetch(`https://cricket-lover-server-site-s-m-zubayer.vercel.app/users/${user._id}`, {
+        fetch(`http://localhost:5000/users/${user._id}`, {
             method: "DELETE",
             headers: {
                 authorization: `bearer ${localStorage.getItem('ACCESS_TOKEN')}`
@@ -33,7 +33,7 @@ const AllBuyers = () => {
         })
             .then(res => res.json())
             .then(data => {
-                if (data.deletedCount > 0) {
+                if (data?.deletedCount > 0) {
                     const newUsers = users.filter(newUser => newUser._id !== user._id);
                     setUsers(newUsers)
                     toast.success(`${user.name} deleted successfully`)
@@ -43,7 +43,7 @@ const AllBuyers = () => {
             })
     }
 
-    const Buyers = users.filter(user => user.accountType === "Buyer")
+    const Buyers = users?.filter(user => user.accountType === "Buyer")
 
     return (
 

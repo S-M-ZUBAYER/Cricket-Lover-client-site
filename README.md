@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# Cricket Lover
+This site will help the crazy cricket lover to got the cricket instruments with low price..  [Cricket Lover](https://cricket-lover-52a96.web.app/).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##  Project Description
 
-## Available Scripts
+* In this website All cricket instruments seller can easily sell their products. 
+* In this website All crazy cricket lover can easily buy their products.
+* Seller can easily add their products and advertise their new collection in home page.
+* Buyer can easily chose any product and buy their necessary products.
+* Admin can monitoring this site , he has the ability to verify the seller and able delete the seller and buyer account.
+* This ia a single page application.
+* I use HTML,CSS,Tailwind,some CSS components, JavaScript, React js, Node js, MondgoDB, stripe for payment etc.
 
-In the project directory, you can run:
 
-### `npm start`
+### How to Use the Project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Runs the site in the development mode.
+Open [Cricket Lover](https://cricket-lover-52a96.web.app/) to view it in your browser. <br/>
+There are 4 nav link to go different router. you can go Home then you can see different products categories and advertise items. There you can choose  any products for you and your child.First of all you have to open an account and then Log in. After that you can choose any any product. And there also contact section. any one can contact easily. and also location added to meet in the office directly. You can easily log in via you email address,  google account.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### `Github Client Site Link:`
+[https://github.com/programming-hero-web-course-4/b612-used-products-resale-clients-side-S-M-ZUBAYER]
 
-### `npm test`
+### `Github Server Site Link:`
+[https://github.com/programming-hero-web-course-4/b612-used-products-resale-server-side-S-M-ZUBAYER]
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### `Live Project Link:`
+[https://cricket-lover-52a96.web.app/]
