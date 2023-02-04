@@ -56,7 +56,7 @@ const AllBuyers = () => {
                 users ?
 
 
-                    <div className="overflow-x-auto w-full">
+                    <div className="overflow-x-auto w-5/6 mx-auto">
                         <table className="table w-full">
 
                             <thead>

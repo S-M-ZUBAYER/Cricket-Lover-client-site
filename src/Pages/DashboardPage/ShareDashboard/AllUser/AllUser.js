@@ -84,18 +84,18 @@ const AllUser = () => {
     return (
 
 
-        <div>
+        <div className="bg-gradient-to-l from-blue-900 via-slate-900 to-black pt-12">
             <h2 className="text-3xl text-lime-500 font-bold mb-5">
                 Available user In your site .......
             </h2>
 
 
-            <div className="overflow-x-auto w-full">
+            <div className="overflow-x-auto w-5/6 mx-auto ">
                 <table className="table w-full">
 
                     <thead>
                         <tr>
-                            <th>User Name / Type</th>
+                            <th >User Name / Type</th>
                             <th>email</th>
                             <th>Register date</th>
                             <th>Verify</th>
