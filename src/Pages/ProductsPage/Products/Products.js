@@ -20,13 +20,11 @@ const Products = () => {
         queryFn: async () => {
             const res = await fetch(`https://cricket-lover-server-site-s-m-zubayer.vercel.app/categories`);
             const data = await res.json();
-            console.log(data)
             return data;
         }
     })
 
     const findCategory = categories.find(category => category?._id === id)
-    console.log(findCategory?.categoryName)
     const url = `https://cricket-lover-server-site-s-m-zubayer.vercel.app/products/${findCategory?.categoryName}`;
 
 

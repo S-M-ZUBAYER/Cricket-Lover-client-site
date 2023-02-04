@@ -5,7 +5,7 @@ const Contact = () => {
 
     return (
         <section className="min-h-screen text-gray-200 bg-gradient-to-l from-blue-900 via-slate-900 to-black pb-20">
-            <div className="container px-6 py-10 mx-auto">
+            <div className="container px-6 py-10 w-5/6 mx-auto">
                 <div className="lg:flex lg:items-center lg:-mx-10">
                     <div className="lg:w-1/2 lg:mx-10">
                         <h1 className="text-3xl font-semibold  capitalize  lg:text-5xl">Let’s talk</h1>
