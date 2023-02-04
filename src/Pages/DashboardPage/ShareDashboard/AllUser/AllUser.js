@@ -10,7 +10,7 @@ const AllUser = () => {
 
     const { user, loading, setLoading } = useContext(AuthContext);
     const [users, setUsers] = useState([])
-    // const url = `http://localhost:5000/users`;
+    // const url = `https://cricket-lover-server-site-s-m-zubayer.vercel.app/users`;
 
     // const { data: users = [], isLoading, refetch } = useQuery({
     //     queryKey: ['users'],
@@ -26,7 +26,7 @@ const AllUser = () => {
     // })
 
     useEffect(() => {
-        fetch('http://localhost:5000/users')
+        fetch('https://cricket-lover-server-site-s-m-zubayer.vercel.app/users')
 
             .then(res => res.json())
             .then(data => {
@@ -44,7 +44,7 @@ const AllUser = () => {
 
     const handleToDelete = (user) => {
         console.log(`${user?.userName} deleted successfully`)
-        fetch(`http://localhost:5000/users/${user._id}`, {
+        fetch(`https://cricket-lover-server-site-s-m-zubayer.vercel.app/users/${user._id}`, {
             method: "DELETE",
             headers: {
                 authorization: `bearer ${localStorage.getItem('ACCESS_TOKEN')}`
@@ -62,7 +62,7 @@ const AllUser = () => {
             })
     }
     // const handleMakeAdmin = id => {
-    //     fetch(`http://localhost:5000/users/admin/${id}`, {
+    //     fetch(`https://cricket-lover-server-site-s-m-zubayer.vercel.app/users/admin/${id}`, {
     //         method: 'PUT',
     //         headers: {
     //             authorization: `bearer ${localStorage.getItem('ACCESS_TOKEN')}`

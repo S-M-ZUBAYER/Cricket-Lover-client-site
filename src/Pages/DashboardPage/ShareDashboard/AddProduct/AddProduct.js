@@ -71,7 +71,7 @@ const AddProduct = () => {
                         sellReason,
                         insertTime
                     }
-                    fetch('http://localhost:5000/products', {
+                    fetch('https://cricket-lover-server-site-s-m-zubayer.vercel.app/products', {
                         method: "POST",
                         headers: {
                             'content-type': 'application/json',
@@ -117,7 +117,7 @@ const AddProduct = () => {
     //             }
     //         })
     //         .catch(err => console.log(err));
-    //     fetch('http://localhost:5000/products', {
+    //     fetch('https://cricket-lover-server-site-s-m-zubayer.vercel.app/products', {
     //         method: "POST",
     //         headers: {
     //             'content-type': 'application/json',
@@ -142,7 +142,7 @@ const AddProduct = () => {
             <h2 className="text-3xl text-lime-400 font-bold mt-12 mb-5">
                 Welcome to use this site to sell your product!!!
             </h2>
-            <div className="mx-12 p-5 border rounded-lg border-8 text-slate-700 bg-slate-100 shadow-2xl">
+            <div className="mx-12 p-5 rounded-lg border-8 text-slate-700 bg-slate-100 shadow-2xl">
                 <form onSubmit={handleSubmit} className='grid grid-cols-2 gap-3 mt-10'>
                     <input name="name" defaultValue={user?.displayName} disabled type="text" placeholder="Your Name" className="input w-full input-bordered" />
                     <input name="email" defaultValue={user?.email} disabled type="email" placeholder="Email Address" className="input w-full input-bordered" />

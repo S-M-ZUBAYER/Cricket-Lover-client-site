@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import DisplaySpinner from '../../../components/Sprinners/DisplaySpinner/DisplaySpinner';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
-const ProductCard = ({ product, setBookingProduct }) => {
+const AdvertiseCard = ({ product, setBookingProduct }) => {
 
     const url = `https://cricket-lover-server-site-s-m-zubayer.vercel.app/user?email=${product?.email}`;
 
@@ -20,12 +20,10 @@ const ProductCard = ({ product, setBookingProduct }) => {
         }
     })
     refetch();
-
-
     const { name, productName, image, sellerImg, resalePrice, date, quality, condition, phone, sellReason, location, description, originalPrice, duration } = product;
     return (
         <div>
-            <div className="flex flex-col max-w-lg p-6  overflow-hidden rounded-lg shadow-md bg-gray-900 text-gray-100">
+            <div className="flex flex-col max-w-lg p-6  overflow-hidden rounded-lg shadow-md dark:bg-gray-900 bg-gradient-to-t bg-red-200 text-black">
                 <div className="flex space-x-4 mb-3">
                     <img alt="" src={sellerImg} className="object-cover w-12 h-12 rounded-full shadow bg-gray-500" />
 
@@ -51,7 +49,7 @@ const ProductCard = ({ product, setBookingProduct }) => {
                 <div>
                     <img src={image} alt="" className="object-cover rounded-lg w-full mb-4 h-56 bg-gray-500" />
                     <h2 className="mb-1 text-xl font-semibold">{productName}</h2>
-                    <p className="text-sm text-gray-400">{description.length > 100 ? description.slice(0, 100) + '...' : description}</p>
+                    <p className="text-sm text-gray-800">{description.length > 100 ? description.slice(0, 100) + '...' : description}</p>
                 </div>
                 <div className="flex justify-between w-full mt-3">
                     <p className="text-sm  text-left mr-3">Condition: {condition}</p>
@@ -62,17 +60,10 @@ const ProductCard = ({ product, setBookingProduct }) => {
                     <p className="text-base mr-3">Resale Price: {resalePrice}$</p>
                 </div>
                 <p className="text-sm text-left mb-5">Reason: <span className="text-sm">{sellReason}</span></p>
-                <div>
 
-                    <label
-                        htmlFor="booking-modal"
-                        onClick={() => setBookingProduct(product)}
-                        className="btn bg-yellow-300 text-black w-full rounded-lg py-2">Book Now</label>
-
-                </div>
             </div>
         </div>
     );
 };
 
-export default ProductCard;
+export default AdvertiseCard;

@@ -15,7 +15,7 @@ const AllBuyers = () => {
                     authorization: `bearer `
                 }
             }
-            const data = await axios.get('http://localhost:5000/users', config)
+            const data = await axios.get('https://cricket-lover-server-site-s-m-zubayer.vercel.app/users', config)
                 .then(res => {
                     setUsers(res?.data);
                 })
@@ -25,7 +25,7 @@ const AllBuyers = () => {
 
     const handleToDelete = (user) => {
         console.log(`${user.userName} deleted successfully`)
-        fetch(`http://localhost:5000/users/${user._id}`, {
+        fetch(`https://cricket-lover-server-site-s-m-zubayer.vercel.app/users/${user._id}`, {
             method: "DELETE",
             headers: {
                 authorization: `bearer ${localStorage.getItem('ACCESS_TOKEN')}`

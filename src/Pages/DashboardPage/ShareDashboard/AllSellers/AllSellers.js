@@ -10,7 +10,7 @@ const AllSellers = () => {
 
     const { user, loading, setLoading } = useContext(AuthContext);
     const [users, setUsers] = useState([])
-    // const url = `http://localhost:5000/users`;
+    // const url = `https://cricket-lover-server-site-s-m-zubayer.vercel.app/users`;
 
     // const { data: users = [], isLoading, refetch } = useQuery({
     //     queryKey: ['users'],
@@ -25,7 +25,7 @@ const AllSellers = () => {
     //     }
     // });
     useEffect(() => {
-        fetch('http://localhost:5000/users')
+        fetch('https://cricket-lover-server-site-s-m-zubayer.vercel.app/users')
 
             .then(res => res.json())
             .then(data => {
@@ -42,7 +42,7 @@ const AllSellers = () => {
     }
 
     const handleToDelete = (user) => {
-        fetch(`http://localhost:5000/users/${user._id}`, {
+        fetch(`https://cricket-lover-server-site-s-m-zubayer.vercel.app/users/${user._id}`, {
             method: "DELETE",
             headers: {
                 authorization: `bearer ${localStorage.getItem('ACCESS_TOKEN')}`

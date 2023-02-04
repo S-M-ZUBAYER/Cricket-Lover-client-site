@@ -2,10 +2,11 @@ import { useQuery } from '@tanstack/react-query';
 import { data } from 'autoprefixer';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import DisplaySpinner from '../../components/Sprinners/DisplaySpinner/DisplaySpinner';
-import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
+import DisplaySpinner from '../../../../components/Sprinners/DisplaySpinner/DisplaySpinner';
+import { AuthContext } from '../../../../Context/AuthProvider/AuthProvider';
 
-const MyOrders = () => {
+
+const WishList = () => {
 
     const { user } = useContext(AuthContext);
 
@@ -23,6 +24,9 @@ const MyOrders = () => {
             return data;
         }
     })
+
+    const wishListProducts = myOrders.filter(order => order?.paid !== true)
+
     refetch();
     if (isLoading) {
         return <DisplaySpinner></DisplaySpinner>
@@ -33,20 +37,21 @@ const MyOrders = () => {
 
                 <div className="flex flex-col justify-center  my-10 w-[90%] space-y-28 lg:space-y-24 max-w-7xl  ">
                     <div className="flex flex-col justify-center items-center text-center">
-                        <div className="text-xl md:text-3xl text-green-500 font-bold uppercase ">Your available orders!!!</div>
+                        <div className="text-xl md:text-3xl text-emerald-400 font-bold uppercase ">Your favorite products!!!</div>
                         <div className="text-sm md:text-xl text-black font-medium">Please complete your payment for next process....
                         </div>
 
                     </div>
-                    {myOrders.length === 0 && <div className="text-2xl font-semibold text-red-600">
-                        No order available please order product...
+
+                    {wishListProducts.length === 0 && <div className="text-2xl font-semibold text-red-600">
+                        No wishList available please choose and save this product as wishList...
                     </div>}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {myOrders.map(order =>
+                        {wishListProducts.map(order =>
 
                             <div className="flex flex-col justify-center items-center lg:flex-row space-y-28 lg:space-y-0  lg:space-x-10 mb-12">
                                 <div
-                                    className=" bg-lime-300 shadow-lg flex flex-col justify-center rounded-lg items-center px-4 py-4 h-56 md:w-[80%] lg:w-fit">
+                                    className=" bg-red-200 shadow-lg flex flex-col justify-center rounded-lg items-center px-4 py-4 h-56 md:w-[80%] lg:w-fit">
                                     <div className="-mt-16 lg:-mt-20">
                                         <img className="h-12 w-12 rounded-full" src={order.img} alt="" />
                                     </div>
@@ -81,4 +86,4 @@ const MyOrders = () => {
     );
 };
 
-export default MyOrders;
+export default WishList;

@@ -14,19 +14,18 @@ const Home = () => {
     const { loading, setLoading } = useContext(AuthContext);
     const [categories, setCategories] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/categories')
+        fetch('https://cricket-lover-server-site-s-m-zubayer.vercel.app/categories')
 
             .then(res => res.json())
             .then(data => {
                 setLoading(true)
                 setCategories(data);
-                console.log(data)
                 setLoading(false)
             });
 
     }, [])
 
-    const url = `http://localhost:5000/products`;
+    const url = `https://cricket-lover-server-site-s-m-zubayer.vercel.app/products`;
 
     const { data: products = [], isLoading, refetch } = useQuery({
         queryKey: ['products'],

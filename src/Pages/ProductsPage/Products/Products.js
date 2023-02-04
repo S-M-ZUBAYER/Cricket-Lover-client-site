@@ -18,7 +18,7 @@ const Products = () => {
     const { data: categories = [] } = useQuery({
         queryKey: ['products'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/categories`);
+            const res = await fetch(`https://cricket-lover-server-site-s-m-zubayer.vercel.app/categories`);
             const data = await res.json();
             console.log(data)
             return data;
@@ -27,14 +27,14 @@ const Products = () => {
     // const { data: products = [] } = useQuery({
     //     queryKey: ['products'],
     //     queryFn: async () => {
-    //         const res = await fetch(`http://localhost:5000/products/?category=${findCategory?.categoryName}`);
+    //         const res = await fetch(`https://cricket-lover-server-site-s-m-zubayer.vercel.app/products/?category=${findCategory?.categoryName}`);
     //         const data = await res.json();
     //         return data;
     //     }
     // })
     // console.log(products)
     // useEffect(() => {
-    //     axios.get(`http://localhost:5000/categories`)
+    //     axios.get(`https://cricket-lover-server-site-s-m-zubayer.vercel.app/categories`)
     //         .then(res => res.json())
     //         .then(data => {
     //             console.log(data)
@@ -42,7 +42,7 @@ const Products = () => {
     // }, [])
     const findCategory = categories.find(category => category?._id === id)
     console.log(findCategory?.categoryName)
-    const url = `http://localhost:5000/products/${findCategory?.categoryName}`;
+    const url = `https://cricket-lover-server-site-s-m-zubayer.vercel.app/products/${findCategory?.categoryName}`;
 
 
     const { data: products = [], isLoading } = useQuery({
@@ -69,6 +69,7 @@ const Products = () => {
                 {
                     availableProducts.map(product => <ProductCard
                         product={product}
+                        key={product._id}
                         setBookingProduct={setBookingProduct}
                     ></ProductCard>)
                 }
