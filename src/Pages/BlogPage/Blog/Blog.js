@@ -2,8 +2,8 @@ import React from 'react';
 
 const Blog = () => {
     return (
-        <div className="mx-24">
-            <div className="space-y-4">
+        <div className="bg-gradient-to-l from-blue-900 via-slate-900 to-black pt-12">
+            <div className="mx-24  space-y-4">
                 <details className="group rounded-lg bg-gray-50 p-6" open>
                     <summary className="flex cursor-pointer items-center justify-between">
                         <h2 className="font-medium text-gray-900">

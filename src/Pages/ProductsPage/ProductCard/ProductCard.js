@@ -25,7 +25,7 @@ const ProductCard = ({ product, setBookingProduct }) => {
     const { name, productName, image, sellerImg, resalePrice, date, quality, condition, phone, sellReason, location, description, originalPrice, duration } = product;
     return (
         <div>
-            <div className="flex flex-col max-w-lg p-6  overflow-hidden rounded-lg shadow-md bg-gray-900 text-gray-100">
+            <div className="flex flex-col max-w-lg p-6 bg-gradient-to-t from-slate-800 via-blue-900 to-gray-900  overflow-hidden rounded-lg shadow-md text-gray-200">
                 <div className="flex space-x-4 mb-3">
                     <img alt="" src={sellerImg} className="object-cover w-12 h-12 rounded-full shadow bg-gray-500" />
 
@@ -49,9 +49,9 @@ const ProductCard = ({ product, setBookingProduct }) => {
                     </div>
                 </div>
                 <div>
-                    <img src={image} alt="" className="object-cover rounded-lg w-full mb-4 h-56 bg-gray-500" />
+                    <img src={image} alt="" className="object-cover rounded-lg w-full mb-4 h-56 " />
                     <h2 className="mb-1 text-xl font-semibold">{productName}</h2>
-                    <p className="text-sm text-gray-400">{description.length > 100 ? description.slice(0, 100) + '...' : description}</p>
+                    <p className="text-sm text-gray-200">{description.length > 100 ? description.slice(0, 100) + '...' : description}</p>
                 </div>
                 <div className="flex justify-between w-full mt-3">
                     <p className="text-sm  text-left mr-3">Condition: {condition}</p>

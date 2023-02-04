@@ -24,22 +24,7 @@ const Products = () => {
             return data;
         }
     })
-    // const { data: products = [] } = useQuery({
-    //     queryKey: ['products'],
-    //     queryFn: async () => {
-    //         const res = await fetch(`https://cricket-lover-server-site-s-m-zubayer.vercel.app/products/?category=${findCategory?.categoryName}`);
-    //         const data = await res.json();
-    //         return data;
-    //     }
-    // })
-    // console.log(products)
-    // useEffect(() => {
-    //     axios.get(`https://cricket-lover-server-site-s-m-zubayer.vercel.app/categories`)
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             console.log(data)
-    //         })
-    // }, [])
+
     const findCategory = categories.find(category => category?._id === id)
     console.log(findCategory?.categoryName)
     const url = `https://cricket-lover-server-site-s-m-zubayer.vercel.app/products/${findCategory?.categoryName}`;
@@ -60,11 +45,11 @@ const Products = () => {
         return <DisplaySpinner></DisplaySpinner>
     }
     return (
-        <div>
+        <div className="bg-gradient-to-l from-blue-900 via-slate-900 to-black">
             <Banner></Banner>
-            <h2 className="font-bold text-cyan-400 text-3xl mt-12 mb-5">Available new collection!!!</h2>
-            <p className="mx-16 mb-5 text-base font-semibold">That all are the new collection for all buyers. Now term to choose the best product and buy that product to get the fresh one. In cricket, you must require all equipment to play it. Playing cricket with no cricket equipment is a waste of time. BCCI had been set similar laws to play cricket. You must be aware of cricket equipment if you are a professional cricketer. </p>
-            <div className="mb-12 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mx-12">
+            <h2 className="font-bold text-cyan-400 text-3xl pt-12 pb-5 ">Available new collection!!!</h2>
+            <p className="mx-16 mb-5 text-gray-200 font-semibold">That all are the new collection for all buyers. Now term to choose the best product and buy that product to get the fresh one. In cricket, you must require all equipment to play it. Playing cricket with no cricket equipment is a waste of time. BCCI had been set similar laws to play cricket. You must be aware of cricket equipment if you are a professional cricketer. </p>
+            <div className="pb-12 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mx-12">
 
                 {
                     availableProducts.map(product => <ProductCard

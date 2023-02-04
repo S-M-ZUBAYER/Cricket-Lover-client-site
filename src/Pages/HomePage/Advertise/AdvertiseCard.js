@@ -23,7 +23,7 @@ const AdvertiseCard = ({ product, setBookingProduct }) => {
     const { name, productName, image, sellerImg, resalePrice, date, quality, condition, phone, sellReason, location, description, originalPrice, duration } = product;
     return (
         <div>
-            <div className="flex flex-col max-w-lg p-6  overflow-hidden rounded-lg shadow-md dark:bg-gray-900 bg-gradient-to-t bg-red-200 text-black">
+            <div className="flex flex-col max-w-lg p-6  overflow-hidden rounded-lg shadow-md dark:bg-gray-900  bg-gradient-to-t from-emerald-900 via-slate-900 to-violet-700 text-gray-200">
                 <div className="flex space-x-4 mb-3">
                     <img alt="" src={sellerImg} className="object-cover w-12 h-12 rounded-full shadow bg-gray-500" />
 
@@ -49,7 +49,7 @@ const AdvertiseCard = ({ product, setBookingProduct }) => {
                 <div>
                     <img src={image} alt="" className="object-cover rounded-lg w-full mb-4 h-56 bg-gray-500" />
                     <h2 className="mb-1 text-xl font-semibold">{productName}</h2>
-                    <p className="text-sm text-gray-800">{description.length > 100 ? description.slice(0, 100) + '...' : description}</p>
+                    <p className="text-sm text-gray-200">{description.length > 100 ? description.slice(0, 100) + '...' : description}</p>
                 </div>
                 <div className="flex justify-between w-full mt-3">
                     <p className="text-sm  text-left mr-3">Condition: {condition}</p>

@@ -35,7 +35,7 @@ const Dashboard = () => {
             <Navbar></Navbar>
             <div className="drawer drawer-mobile">
                 <input id="dashboard-drawer" type="checkbox" className="drawer-toggle" />
-                <div className="drawer-content">
+                <div className="drawer-content bg-gradient-to-l from-blue-900 via-slate-900 to-black">
                     <Outlet></Outlet>
 
 

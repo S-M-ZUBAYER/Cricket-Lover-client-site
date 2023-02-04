@@ -30,7 +30,7 @@ const MyProducts = () => {
     }
     return (
         <div>
-            <h2 className="text-amber-300 font-bold text-3xl">Your available added Products!!!</h2>
+            <h2 className="text-amber-300 font-bold text-3xl my-8">Your available added Products!!!</h2>
 
             {products.length === 0 && <div className="text-2xl font-semibold text-red-600">
                 No Product available please add product...

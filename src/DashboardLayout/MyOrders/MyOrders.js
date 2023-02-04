@@ -33,7 +33,7 @@ const MyOrders = () => {
 
                 <div className="flex flex-col justify-center  my-10 w-[90%] space-y-28 lg:space-y-24 max-w-7xl  ">
                     <div className="flex flex-col justify-center items-center text-center">
-                        <div className="text-xl md:text-3xl text-green-500 font-bold uppercase ">Your available orders!!!</div>
+                        <div className="text-xl md:text-3xl text-green-500 font-bold uppercase my-5 ">Your available orders!!!</div>
                         <div className="text-sm md:text-xl text-black font-medium">Please complete your payment for next process....
                         </div>
 
