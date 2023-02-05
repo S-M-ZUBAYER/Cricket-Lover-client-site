@@ -89,61 +89,17 @@ const AddProduct = () => {
             })
     }
 
-    //     fetch(url, {
-    //         method: "POST",
-    //         body: formData
-    //     })
-    //         .then(res => res.json())
-    //         .then(imgData => {
-    //             if (imgData.success) {
-    //                 console.log(imgData.data.url);
-    // const product = {
-    //     name,
-    //     image: formData,
-    //     email,
-    //     available,
-    //     phone,
-    //     category,
-    //     productName,
-    //     resalePrice,
-    //     condition,
-    //     purchaseDate,
-    //     description,
-    //     duration,
-    //     originalPrice,
-    //     date,
-    //     sold
-    // }
-    //             }
-    //         })
-    //         .catch(err => console.log(err));
-    //     fetch('https://cricket-lover-server-site-s-m-zubayer.vercel.app/products', {
-    //         method: "POST",
-    //         headers: {
-    //             'content-type': 'application/json',
-    //             authorization: `bearer ${localStorage.getItem('ACCESS_TOKEN')}`
-    //         },
-    //         body: JSON.stringify(product)
-    //     })
-    //         .then(res => res.json())
-    //         .then(result => {
-    //             console.log(result);
-    //             toast.success(`product added successfully`);
-    //             event.target.reset();
-    //             navigate('/dashboard/addProduct')
-    //         })
-
-
-    // }
-
 
     return (
         <div>
             <h2 className="text-3xl text-lime-400 font-bold mt-12 mb-5">
                 Welcome to use this site to sell your product!!!
             </h2>
-            <div className="mx-12 p-5 rounded-lg border-8 text-slate-700 bg-slate-100 shadow-2xl">
-                <form onSubmit={handleSubmit} className='grid grid-cols-2 gap-3 mt-10'>
+            <div className="mx-8 p-5 rounded-lg border-8 text-slate-700 bg-gradient-to-l from-blue-900 via-slate-900 to-black pt-12 shadow-2xl">
+                <h3 className="text-2xl text-lime-700 font-bold">
+                    Product Description Form:
+                </h3>
+                <form onSubmit={handleSubmit} className='grid grid-cols-2 gap-3 mt-8'>
                     <input name="name" defaultValue={user?.displayName} disabled type="text" placeholder="Your Name" className="input w-full input-bordered" />
                     <input name="email" defaultValue={user?.email} disabled type="email" placeholder="Email Address" className="input w-full input-bordered" />
                     <input name="phone" type="text" placeholder="Seller Phone Number" className="input w-full input-bordered" />

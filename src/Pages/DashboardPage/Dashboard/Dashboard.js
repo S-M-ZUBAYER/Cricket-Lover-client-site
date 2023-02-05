@@ -40,9 +40,9 @@ const Dashboard = () => {
 
 
                 </div>
-                <div className="drawer-side">
+                <div className="drawer-side text-gray-200 font-bold text-xl bg-gradient-to-l from-blue-900 via-slate-900 to-black">
                     <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80  text-base-content">
+                    <ul className="menu p-4 w-80 ">
 
                         {
                             isAdmin && <>
@@ -67,7 +67,7 @@ const Dashboard = () => {
 
 
                         <Link className="text-left" to='/'>
-                            <button className='px-4 py-2 mt-8 ml-0 font-semibold text-base lg:text-lg rounded bg-green-300'>
+                            <button className='px-4 py-2 mt-8 ml-0 font-semibold text-black lg:text-lg rounded bg-green-300'>
                                 Back to homepage
                             </button>
                         </Link>

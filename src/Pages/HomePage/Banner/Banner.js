@@ -5,7 +5,7 @@ const Banner = () => {
     return (
         //style="background-image:url('https://source.unsplash.com/700x400/?white')"
         <div className="h-screen text-gray-200">
-            <div className="flex justify-center  bg-no-repeat  bg-cover h-full md:bg-center" style={{ backgroundImage: `url(${image})` }}
+            <div className="flex justify-center opacity-90  bg-no-repeat bg-cover h-full md:bg-center" style={{ backgroundImage: `url(${image})` }}
             >
                 <div className="flex flex-col items-center ">
 
