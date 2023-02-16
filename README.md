@@ -18,6 +18,8 @@ Runs the site in the development mode.
 Open [Cricket Lover](https://cricket-lover-52a96.web.app/) to view it in your browser. <br/>
 There are 4 nav link to go different router. you can go Home then you can see different products categories and advertise items. There you can choose  any products for you and your child.First of all you have to open an account and then Log in. After that you can choose any any product. And there also contact section. any one can contact easily. and also location added to meet in the office directly. You can easily log in via you email address,  google account.
 
+### Account Holder User Email Address and password
+
 ### Admin:-
 Email:- tom@crush.com
 Password:- 123456

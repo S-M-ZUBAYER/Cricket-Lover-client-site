@@ -7,7 +7,7 @@ const Banner = () => {
         <div className="h-screen text-gray-200">
             <div className="flex justify-center opacity-90  bg-no-repeat bg-cover h-full md:bg-center" style={{ backgroundImage: `url(${image})` }}
             >
-                <div className="flex flex-col items-center ">
+                <div data-aos="fade-down-right" className="flex flex-col items-center ">
 
                     <div className="flex flex-col justify-center items-center text-center  max-w-7xl   my-8 py-4 px-10">
                         <h1 className="text-2xl text-green-300 font-semibold tracking-wider ">Welcome to all cricket lovers in our site</h1>

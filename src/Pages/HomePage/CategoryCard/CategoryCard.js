@@ -3,7 +3,7 @@ import React from 'react';
 const CategoryCard = (category) => {
     const { categoryName, categoryImage, products, categoryId } = category;
     return (
-        <div className='my-8'>
+        <div data-aos="fade-up" className='my-8'>
             <div className="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
                 <div className="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md" style={{ backgroundImage: `url(${category.category.categoryImg})` }}></div>
 

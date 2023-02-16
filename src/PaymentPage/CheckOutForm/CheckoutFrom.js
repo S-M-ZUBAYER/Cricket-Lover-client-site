@@ -126,7 +126,7 @@ const CheckOutForm = ({ booking }) => {
     }
 
     return (
-        <div className="w-full mx-auto">
+        <div data-aos="flip-left" className="w-full mx-auto">
             <form onSubmit={handleSubmit}>
                 <CardElement
                     options={{

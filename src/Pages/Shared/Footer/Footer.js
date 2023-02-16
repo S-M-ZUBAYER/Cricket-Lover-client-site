@@ -6,7 +6,7 @@ const Footer = () => {
             <div className="container p-6 mx-auto">
                 <div className="lg:flex">
 
-                    <div className="mt-6 lg:mt-0 lg:flex-1">
+                    <div data-aos="fade-up" className="mt-6 lg:mt-0 lg:flex-1 ">
                         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
                             <div>
                                 <h3 className="text-gray-200 uppercase dark:text-white">Cricket Lover</h3>

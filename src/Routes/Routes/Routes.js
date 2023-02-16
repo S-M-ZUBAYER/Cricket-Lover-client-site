@@ -20,6 +20,7 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import WishList from "../../Pages/DashboardPage/ShareDashboard/WishList/WishList";
 import Contact from "../../Pages/ContactPage/Contact";
 
+
 const router = createBrowserRouter([
     {
         path: '/',
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
                 path: '/register',
                 element: <Register></Register>
             },
+            // {
+            //     path: '/products',
+            //     element: <products></products>
+            // },
             {
                 path: '/blog',
                 element: <Blog></Blog>

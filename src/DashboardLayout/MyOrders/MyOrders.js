@@ -32,13 +32,13 @@ const MyOrders = () => {
             <div className="flex justify-center bg-slate-100 shadow-2xl m-11 rounded-lg">
 
                 <div className="flex flex-col justify-center  my-10 w-[90%] space-y-28 lg:space-y-24 max-w-7xl  ">
-                    <div className="flex flex-col justify-center items-center text-center">
+                    <div data-aos="fade-down" className="flex flex-col justify-center items-center text-center">
                         <div className="text-xl md:text-3xl text-green-500 font-bold uppercase my-5 ">Your available orders!!!</div>
-                        <div className="text-sm md:text-xl text-black font-medium">Please complete your payment for next process....
+                        <div className="text-sm md:text-xl text-black font-medium">Please complete your payment for next process if you didn't....
                         </div>
 
                     </div>
-                    {myOrders.length === 0 && <div className="text-2xl font-semibold text-red-600">
+                    {myOrders.length === 0 && <div data-aos="fade-up" className="text-2xl font-semibold text-red-600">
                         No order available please order product...
                     </div>}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

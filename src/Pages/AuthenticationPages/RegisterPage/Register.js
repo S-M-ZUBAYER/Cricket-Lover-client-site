@@ -18,7 +18,8 @@ const Register = () => {
         const email = event.target.email.value;
         const password = event.target.password.value;
         const accountType = event.target.type.value;
-        console.log(name, image, email, password, accountType);
+        setLoading(true);
+        console.log(name, image, email, password, accountType, loading);
 
 
         const formData = new FormData();
@@ -67,7 +68,7 @@ const Register = () => {
 
     return (
         <div className='flex justify-center items-center pt-8 drop-shadow-2xl bg-gradient-to-l from-blue-900 via-slate-900 to-black '>
-            <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900'>
+            <div data-aos="zoom-in-down" className='flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900'>
                 <div className='mb-8 text-center'>
                     <h1 className='my-3 text-4xl font-bold'>Signup</h1>
                     <p className='text-sm text-gray-400'>Create a new account</p>
