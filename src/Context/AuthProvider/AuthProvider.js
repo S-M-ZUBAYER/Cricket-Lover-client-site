@@ -45,7 +45,7 @@ const AuthProvider = ({ children }) => {
         return sendEmailVerification(auth.currentUser)
     }
 
-    // 4. Google Signin
+    // 4. Google SignIn
     const signInWithGoogle = () => {
         setLoading(true)
         return signInWithPopup(auth, googleProvider)

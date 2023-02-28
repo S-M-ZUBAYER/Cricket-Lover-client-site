@@ -8,7 +8,7 @@ const useSeller = email => {
             fetch(`https://cricket-lover-server-site-s-m-zubayer.vercel.app/users/seller/${email}`)
                 .then(res => res.json())
                 .then(data => {
-                    setIsSeller(data.isAdmin);
+                    setIsSeller(data.isSeller);
                     setIsSellerLoading(false);
                 })
         }

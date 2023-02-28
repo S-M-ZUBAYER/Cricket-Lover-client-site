@@ -3,12 +3,12 @@ import React from 'react';
 const History = () => {
     return (
         <section className="p-6 py-6 bg-gradient-to-l from-blue-900 via-slate-900 to-black pt-12 text-gray-200">
-            <div data-aos="fade-down" className="mb-5 mt-12">
+            <div data-aos="fade-down" data-aos-duration="2000" className="mb-5 mt-12">
                 <h2 className="text-black text-3xl text-green-400 font-bold">Short Overview</h2>
                 <p className="text-gray-200 text-base font-semibold">When starting a business, one key task is to create a business plan that outlines your goals and how you aim to achieve them. Your business overview is a necessary section that presents these ideas more broadly and provides your audience with background information about your company.</p>
             </div>
             <div className="container grid grid-cols-1 gap-6 mx-auto sm:grid-cols-2 xl:grid-cols-4">
-                <div data-aos="fade-right" className="flex p-4 space-x-4 rounded-lg md:space-x-6 bg-gradient-to-t from-blue-900 via-slate-900 to-violet-700 text-gray-100">
+                <div data-aos="fade-right" data-aos-duration="2000" className="flex p-4 space-x-4 rounded-lg md:space-x-6 bg-gradient-to-t from-blue-900 via-slate-900 to-violet-700 text-gray-100">
                     <div className="flex justify-center p-2 align-middle rounded-lg sm:p-4 bg-violet-400">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="h-9 w-28 text-gray-800">
                             <polygon points="160 96.039 160 128.039 464 128.039 464 191.384 428.5 304.039 149.932 304.039 109.932 16 16 16 16 48 82.068 48 122.068 336.039 451.968 336.039 496 196.306 496 96.039 160 96.039"></polygon>
@@ -21,7 +21,7 @@ const History = () => {
                         <p className="capitalize">Orders</p>
                     </div>
                 </div>
-                <div data-aos="fade-right" className="flex p-4 space-x-4 rounded-lg md:space-x-6 bg-gradient-to-t from-blue-900 via-slate-900 to-violet-700 text-gray-100">
+                <div data-aos="fade-right" data-aos-duration="2000" className="flex p-4 space-x-4 rounded-lg md:space-x-6 bg-gradient-to-t from-blue-900 via-slate-900 to-violet-700 text-gray-100">
                     <div className="flex justify-center p-2 align-middle rounded-lg sm:p-4 bg-violet-400">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="h-9 w-9 text-gray-800">
                             <path d="M256,16C123.452,16,16,123.452,16,256S123.452,496,256,496,496,388.548,496,256,388.548,16,256,16ZM403.078,403.078a207.253,207.253,0,1,1,44.589-66.125A207.332,207.332,0,0,1,403.078,403.078Z"></path>
@@ -35,7 +35,7 @@ const History = () => {
                         <p className="capitalize">New customers</p>
                     </div>
                 </div>
-                <div data-aos="fade-left" className="flex p-4 space-x-4 rounded-lg md:space-x-6 bg-gradient-to-t from-blue-900 via-slate-900 to-violet-700 text-gray-100">
+                <div data-aos="fade-left" data-aos-duration="2000" className="flex p-4 space-x-4 rounded-lg md:space-x-6 bg-gradient-to-t from-blue-900 via-slate-900 to-violet-700 text-gray-100">
                     <div className="flex justify-center p-2 align-middle rounded-lg sm:p-4 bg-violet-400">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="h-9 w-9 text-gray-800">
                             <path d="M425.706,142.294A240,240,0,0,0,16,312v88H160V368H48V312c0-114.691,93.309-208,208-208s208,93.309,208,208v56H352v32H496V312A238.432,238.432,0,0,0,425.706,142.294Z"></path>
@@ -51,7 +51,7 @@ const History = () => {
                         <p className="capitalize">Growth</p>
                     </div>
                 </div>
-                <div data-aos="fade-left" className="flex p-4 space-x-4 rounded-lg md:space-x-6 bg-gradient-to-t from-blue-900 via-slate-900 to-violet-700 text-gray-100">
+                <div data-aos="fade-left" data-aos-duration="2000" className="flex p-4 space-x-4 rounded-lg md:space-x-6 bg-gradient-to-t from-blue-900 via-slate-900 to-violet-700 text-gray-100">
                     <div className="flex justify-center p-2 align-middle rounded-lg sm:p-4 bg-violet-400">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="h-9 w-9 text-gray-800">
                             <path d="M454.423,278.957,328,243.839v-8.185a116,116,0,1,0-104,0V312H199.582l-18.494-22.6a90.414,90.414,0,0,0-126.43-13.367,20.862,20.862,0,0,0-8.026,33.47L215.084,496H472V302.08A24.067,24.067,0,0,0,454.423,278.957ZM192,132a84,84,0,1,1,136,65.9V132a52,52,0,0,0-104,0v65.9A83.866,83.866,0,0,1,192,132ZM440,464H229.3L79.141,297.75a58.438,58.438,0,0,1,77.181,11.91l28.1,34.34H256V132a20,20,0,0,1,40,0V268.161l144,40Z"></path>

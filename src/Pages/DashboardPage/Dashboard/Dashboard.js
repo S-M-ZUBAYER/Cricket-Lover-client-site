@@ -37,8 +37,8 @@ const Dashboard = () => {
                 <div className="drawer-content bg-gradient-to-l from-blue-900 via-slate-900 to-black">
 
                     <div className="text-white pt-12 pb-5">
-                        <img data-aos="fade-down" className="h-40 w-40 rounded-full border-8 border-x-fuchsia-500 border-yellow-300 mx-auto" src={user?.photoURL} alt="" />
-                        <div data-aos="fade-up">
+                        <img data-aos="fade-down" data-aos-duration="2000" className="h-40 w-40 rounded-full border-8 border-x-fuchsia-500 border-yellow-300 mx-auto" src={user?.photoURL} alt="" />
+                        <div data-aos="fade-up" data-aos-duration="2000">
                             <h1 className="text-2xl font-bold" >
                                 Hi <span className="text-lime-400">{user?.displayName}</span>
                             </h1>
@@ -54,7 +54,7 @@ const Dashboard = () => {
                 </div>
                 <div className="drawer-side text-gray-200 font-bold text-xl bg-gradient-to-l from-blue-900 via-slate-900 to-black">
                     <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
-                    <ul data-aos="fade-up-right" className="menu p-4 w-80 ">
+                    <ul data-aos="fade-up-right" data-aos-duration="2000" className="menu p-4 w-80 ">
 
                         {
                             isAdmin && <>

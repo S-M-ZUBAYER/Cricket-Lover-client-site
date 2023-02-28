@@ -92,10 +92,10 @@ const AddProduct = () => {
 
     return (
         <div>
-            <h2 data-aos="fade-down" className="text-3xl text-lime-400 font-bold mt-12 mb-5">
+            <h2 data-aos="fade-down" data-aos-duration="2000" className="text-3xl text-lime-400 font-bold mt-12 mb-5">
                 Welcome to use this site to sell your product!!!
             </h2>
-            <div data-aos="zoom-in-up" className="mx-8 p-5 rounded-lg border-8 text-slate-700 bg-gradient-to-l from-blue-900 via-slate-900 to-black pt-12 shadow-2xl">
+            <div data-aos="zoom-in-up" data-aos-duration="2000" className="mx-8 p-5 rounded-lg border-8 text-slate-700 bg-gradient-to-l from-blue-900 via-slate-900 to-black pt-12 shadow-2xl">
                 <h3 className="text-2xl text-lime-700 font-bold">
                     Product Description Form:
                 </h3>

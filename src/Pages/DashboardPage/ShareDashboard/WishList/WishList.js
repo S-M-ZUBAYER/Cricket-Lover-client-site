@@ -36,14 +36,14 @@ const WishList = () => {
             <div className="flex justify-center bg-slate-100 shadow-2xl m-11 rounded-lg">
 
                 <div className="flex flex-col justify-center  my-10 w-[90%] space-y-28 lg:space-y-24 max-w-7xl  ">
-                    <div data-aos="fade-down" className="flex flex-col justify-center items-center text-center">
+                    <div data-aos="fade-down" data-aos-duration="2000" className="flex flex-col justify-center items-center text-center">
                         <div className="text-xl md:text-3xl text-emerald-400 font-bold uppercase ">Your favorite products!!!</div>
                         <div className="text-sm md:text-xl text-black font-medium">Please complete your payment for next process....
                         </div>
 
                     </div>
 
-                    {wishListProducts.length === 0 && <div data-aos="fade-up" className="text-2xl font-semibold text-red-600">
+                    {wishListProducts.length === 0 && <div data-aos="fade-up" data-aos-duration="2000" className="text-2xl font-semibold text-red-600">
                         No wishList available please choose and save this product as wishList...
                     </div>}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

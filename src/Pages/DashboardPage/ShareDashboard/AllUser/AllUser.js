@@ -85,12 +85,12 @@ const AllUser = () => {
 
 
         <div className="bg-gradient-to-l from-blue-900 via-slate-900 to-black pt-12">
-            <h2 data-aos="fade-down" className="text-3xl text-lime-500 font-bold mb-5">
+            <h2 data-aos="fade-down" data-aos-duration="2000" className="text-3xl text-lime-500 font-bold mb-5">
                 Available user In your site .......
             </h2>
 
 
-            <div data-aos="flip-up" className="overflow-x-auto w-5/6 mx-auto ">
+            <div data-aos="flip-up" data-aos-duration="2000" className="overflow-x-auto w-5/6 mx-auto ">
                 <table className="table w-full">
 
                     <thead>

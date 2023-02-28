@@ -50,7 +50,7 @@ const Home = () => {
                 ></Advertise>
             }
             <div className="pt-16 bg-gradient-to-l from-blue-900 via-slate-900 to-black">
-                <div data-aos="fade-down">
+                <div data-aos="fade-down" data-aos-duration="2000">
                     <h2 className="font-bold text-blue-400 text-3xl mb-5">All categories collections!!!</h2>
                     <p className="mx-12 text-gray-200 font-semibold">That all are the new collection for all buyers. Now term to choose the best product and buy that product to get the fresh one. In cricket, you must require all equipment to play it. Playing cricket with no cricket equipment is a waste of time. BCCI had been set similar laws to play cricket. You must be aware of cricket equipment if you are a professional cricketer. </p>
                 </div>

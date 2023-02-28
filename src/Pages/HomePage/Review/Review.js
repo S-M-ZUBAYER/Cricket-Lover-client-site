@@ -5,10 +5,10 @@ const Review = () => {
         <div className="p-12 bg-gradient-to-l from-blue-900 via-slate-900 to-black pt-12 text-gray-200">
             <section className="my-8">
                 <div className="container mx-auto flex flex-col items-center pb-6 mb-4 md:p-10 md:px-12">
-                    <h1 data-aos="fade-down" className="text-4xl text-fuchsia-500 font-semibold leading-none text-center">What our customers are saying about us</h1>
+                    <h1 data-aos="fade-down" data-aos-duration="2000" className="text-4xl text-fuchsia-500 font-semibold leading-none text-center">What our customers are saying about us</h1>
                 </div>
                 <div className="container mx-auto grid grid-cols-1 gap-8 lg:gap-20 md:px-10 md:pb-10 lg:grid-cols-2">
-                    <div data-aos="fade-right" className="flex flex-col items-center mx-12 lg:mx-0">
+                    <div data-aos="fade-right" data-aos-duration="2000" className="flex flex-col items-center mx-12 lg:mx-0">
                         <div className="relative text-center">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="absolute top-0 left-0 w-8 h-8 text-gray-200">
                                 <path d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>
@@ -23,7 +23,7 @@ const Review = () => {
                         <span className="w-12 h-1 my-2 rounded-lg bg-violet-400"></span>
                         <p>S M Zubayer</p>
                     </div>
-                    <div data-aos="fade-left" className="flex flex-col items-center max-w-lg mx-12 lg:mx-0">
+                    <div data-aos="fade-left" data-aos-duration="2000" className="flex flex-col items-center max-w-lg mx-12 lg:mx-0">
                         <div className="relative text-center">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="absolute top-0 left-0 w-8 h-8 text-gray-200">
                                 <path fill="currentColor" d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>

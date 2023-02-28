@@ -7,7 +7,7 @@ const Contact = () => {
         <section className="min-h-screen text-gray-200 bg-gradient-to-l from-blue-900 via-slate-900 to-black pb-20">
             <div className="container px-6 py-10 w-5/6 mx-auto">
                 <div className="lg:flex lg:items-center lg:-mx-10">
-                    <div data-aos="fade-right" className="lg:w-1/2 lg:mx-10">
+                    <div data-aos="fade-right" data-aos-duration="2000" className="lg:w-1/2 lg:mx-10">
                         <h1 className="text-3xl font-semibold  capitalize  lg:text-5xl">Let’s talk</h1>
 
                         <p className="mt-4  dark:text-gray-400">
@@ -39,7 +39,7 @@ const Contact = () => {
                         </form>
                     </div>
 
-                    <div data-aos="fade-left" className="mt-12 lg:flex lg:mt-0 lg:flex-col lg:items-center lg:w-1/2 lg:mx-10 v">
+                    <div data-aos="fade-left" data-aos-duration="2000" className="mt-12 lg:flex lg:mt-0 lg:flex-col lg:items-center lg:w-1/2 lg:mx-10 v">
                         <img className="hidden object-cover mx-auto rounded-full lg:block shrink-0 w-96 h-96" src="https://images.unsplash.com/photo-1598257006458-087169a1f08d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="" />
 
                         <div className="mt-6 space-y-8 md:mt-8">

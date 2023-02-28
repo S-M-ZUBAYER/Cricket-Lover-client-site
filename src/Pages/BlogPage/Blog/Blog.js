@@ -4,8 +4,8 @@ const Blog = () => {
     return (
         <div className="bg-gradient-to-l from-blue-900 via-slate-900 to-black pt-12">
             <div className="mx-24  space-y-4">
-                <details data-aos="fade-up" className="group rounded-lg bg-gray-50 p-6" open>
-                    <summary data-aos="fade-up" className="flex cursor-pointer items-center justify-between">
+                <details data-aos="fade-up" data-aos-duration="2000" className="group rounded-lg bg-gray-50 p-6" open>
+                    <summary data-aos="fade-up" data-aos-duration="2000" className="flex cursor-pointer items-center justify-between">
                         <h2 className="font-medium text-gray-900">
                             1. What are the different ways to manage a state in a React application?
                         </h2>
@@ -43,7 +43,7 @@ const Blog = () => {
                         </span>
                     </summary>
 
-                    <p data-aos="fade-up" className="mt-4 leading-relaxed text-gray-700 text-left">
+                    <p data-aos="fade-up" data-aos-duration="2000" className="mt-4 leading-relaxed text-gray-700 text-left">
                         <h3 className="text-xl font-bold text-green-800">Ways to manage a state in a React application:-</h3>
                         <span>There are four main types of state you need to properly manage in your React apps:</span>
                         <span><br /> 1. Local state
@@ -89,7 +89,7 @@ const Blog = () => {
                     </p>
                 </details>
 
-                <details data-aos="fade-up" className="group rounded-lg bg-gray-50 p-6">
+                <details data-aos="fade-up" data-aos-duration="2000" className="group rounded-lg bg-gray-50 p-6">
                     <summary className="flex cursor-pointer items-center justify-between">
                         <h2 className="font-medium text-gray-900">
                             2. How does prototypical inheritance work?
@@ -142,7 +142,7 @@ const Blog = () => {
                         <br />
                     </p>
                 </details>
-                <details data-aos="fade-up" className="group rounded-lg bg-gray-50 p-6">
+                <details data-aos="fade-up" data-aos-duration="2000" className="group rounded-lg bg-gray-50 p-6">
                     <summary className="flex cursor-pointer items-center justify-between">
                         <h2 className="font-medium text-gray-900">
                             3. What is a unit test? Why should we write unit tests?
@@ -199,7 +199,7 @@ const Blog = () => {
                         <span>Writing unit tests makes me think about edge cases—all the situations that are rare, unexpected, or wrong. When you write the logic, it’s normal to focus on the happy path, or what’s normal and expected to happen. When you write tests, you can set up checks for the edge cases and define what should happen in each of them. This makes your code more resilient in cases of unexpected inputs.</span>
                     </p>
                 </details>
-                <details data-aos="fade-up" className="group rounded-lg bg-gray-50 p-6">
+                <details data-aos="fade-up" data-aos-duration="2000" className="group rounded-lg bg-gray-50 p-6">
                     <summary className="flex cursor-pointer items-center justify-between">
                         <h2 className="font-medium text-gray-900">
                             4. React vs. Angular vs. Vue?

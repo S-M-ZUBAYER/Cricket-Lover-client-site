@@ -32,7 +32,7 @@ const MyOrders = () => {
             <div className="flex justify-center bg-slate-100 shadow-2xl m-11 rounded-lg">
 
                 <div className="flex flex-col justify-center  my-10 w-[90%] space-y-28 lg:space-y-24 max-w-7xl  ">
-                    <div data-aos="fade-down" className="flex flex-col justify-center items-center text-center">
+                    <div data-aos="fade-down" data-aos-duration="2000" className="flex flex-col justify-center items-center text-center">
                         <div className="text-xl md:text-3xl text-green-500 font-bold uppercase my-5 ">Your available orders!!!</div>
                         <div className="text-sm md:text-xl text-black font-medium">Please complete your payment for next process if you didn't....
                         </div>

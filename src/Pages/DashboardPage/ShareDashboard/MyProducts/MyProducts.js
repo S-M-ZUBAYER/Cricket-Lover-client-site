@@ -30,9 +30,9 @@ const MyProducts = () => {
     }
     return (
         <div>
-            <h2 data-aos="fade-down" className="text-amber-300 font-bold text-3xl my-8">Your available added Products!!!</h2>
+            <h2 data-aos="fade-down" data-aos-duration="2000" className="text-amber-300 font-bold text-3xl my-8">Your available added Products!!!</h2>
 
-            {products.length === 0 && <div data-aos="fade-up" className="text-2xl font-semibold text-red-600">
+            {products.length === 0 && <div data-aos="fade-up" data-aos-duration="2000" className="text-2xl font-semibold text-red-600">
                 No Product available please add product...
             </div>}
 
